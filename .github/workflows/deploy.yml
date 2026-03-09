@@ -28,18 +28,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Rebase website branch onto main
-        run: |
-          git checkout website
-          git rebase main
-          git checkout main -- .
-          git reset HEAD
-
       - name: Generate static site
         run: python -m scripts.generate
 
-      - name: Commit and push
+      - name: Deploy to website branch
         run: |
+          git checkout -B website
           git add --force static/ index.html MonPotager.html
           git commit -m "Generate static site"
           git push origin website --force
