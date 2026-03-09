@@ -17,7 +17,7 @@ import polars as pl
 # Ensure scripts/ is importable
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from scripts.constants import (
-    ENDC, FAIL, OKBLUE, OKGREEN,
+    ENDC, FAIL, OKBLUE, OKGREEN, WARNING,
     categories, clean_string, interaction_forward, most_complete,
 )
 
@@ -209,16 +209,23 @@ def clean_associations_data():
         interaction = interaction_mapping[interaction_type]
 
         source_num = str(row.get('source', '')).strip()
-        reference_name = reference_map.get(source_num, f"une autre source ({source_num})")
+        reference_name = reference_map.get(source_num, None)
+        if reference_name is None:
+            print(WARNING + f"Reference ID '{source_num}' not found in paut_references.csv" + ENDC)
+            reference_name = f"une autre source ({source_num})"
         reference = f"{interaction_forward[interaction]} d'après {reference_name}"
 
-        direction = str(row.get('sens', '')).strip()
-        if direction == '':
+        direction = str(row.get('Sens', '')).strip()
+        if direction == '' or direction == 'null' or direction == 'None':
             add_or_update_interaction(source=source, target=target, interaction=interaction, references=reference)
             add_or_update_interaction(source=target, target=source, interaction=interaction, references=reference)
         elif direction[0] == '1' and direction[-1] == '2':
             add_or_update_interaction(source=source, target=target, interaction=interaction, references=reference)
         elif direction[0] == '2' and direction[-1] == '1':
+            add_or_update_interaction(source=target, target=source, interaction=interaction, references=reference)
+        else:
+            print(WARNING + f"Unknown direction '{direction}' for {source} → {target}, treating as bidirectional." + ENDC)
+            add_or_update_interaction(source=source, target=target, interaction=interaction, references=reference)
             add_or_update_interaction(source=target, target=source, interaction=interaction, references=reference)
 
 

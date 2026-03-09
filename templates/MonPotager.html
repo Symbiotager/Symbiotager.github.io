@@ -131,6 +131,21 @@
                     </a>
                 </div>
             </div>
+            <div id="link-info" class="panel panel-default panel-MonPotager no-margin-bottom hidden">
+                <div class="panel-heading clearfix">
+                    <b><span id="link-info-name"></span></b>
+                </div>
+                <div class="panel-body">
+                    <div class="padding-div">
+                        <span class="glyphicon glyphicon-stats"></span>
+                        <b><span id="link-info-weight"></span></b>
+                    </div>
+                    <div class="padding-div">
+                        <b>Sources :</b>
+                        <div id="link-info-refs"></div>
+                    </div>
+                </div>
+            </div>
             <div style="padding-bottom: 60px !important;"></div>
         </div>
         <svg id="graph"></svg>
@@ -250,6 +265,11 @@
                 <i>Symbiotager</i> permet également d'obtenir facilement des informations sur la façon dont un parasite
                 peut être éliminé par des plants compagnes.
                 <br><br>
+                <b>Deux versions sont disponibles :</b>
+                <ul>
+                    <li><b>Associations entre plantes</b> (cette version{% if version_label != "Paut" %} : <a href="index.html">accéder</a>{% endif %}) — uniquement les associations entre plantes (fruits, légumes, arômates, fleurs, céréales, arbres), issues du projet de recherche de Paut et&nbsp;al. L'épaisseur des liens reflète le nombre de sources bibliographiques en accord ; cliquer sur un lien affiche les références détaillées.</li>
+                    <li><b>Inclure les nuisibles</b> ({% if version_label == "Paut" %}<a href="MonPotager.html">accéder</a>{% else %}cette version{% endif %}) — inclut en plus les nuisibles et auxiliaires, à partir de deux ouvrages de référence.</li>
+                </ul>
                 <div class="small">
                     {% if version_label == "Paut" %}
                     Les données de cette version proviennent du projet de recherche de Paut et al. :<br>
@@ -327,10 +347,10 @@
                 <br>
                 <b>Jardinier confirmé, </b>un potager avec des nuisibles dont il faut vous débarrasser : <br>
                 {% if version_label == "Paut" %}
-                <button id="reset-0" data-plants="carotte|pomme de terre|betterave|haricot" type="button"
+                <button id="reset-0" data-plants="carotte|pomme de terre|betterave|poireau" type="button"
                         class="btn btn-primary center-block reset-btn" data-dismiss="modal" style="margin-top: 5px">
                     Carotte, pomme de terre, betterave
-                    et haricot
+                    et poireau
                 </button>
                 {% else %}
                 <button id="reset-0" data-plants="carotte|pommier|betterave|haricot" type="button"

@@ -105,6 +105,23 @@ svg {
   .link {
     fill: none;
     stroke-width: 2px;
+    pointer-events: stroke;
+  }
+
+  .link:hover {
+    cursor: pointer;
+  }
+
+  .link.weight-low {
+    stroke-width: 1px;
+  }
+
+  .link.weight-mid {
+    stroke-width: 1.5px;
+  }
+
+  .link.weight-high {
+    stroke-width: 2.5px;
   }
 
   .link.pos {
@@ -437,5 +454,37 @@ input[type=submit] {
 .autocomplete-active {
   background-color: DodgerBlue !important;
   color: #ffffff;
+}
+
+/* Link tooltip */
+.link-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Link info reference list */
+#link-info {
+  .ref-agree {
+    color: $green;
+  }
+  .ref-disagree {
+    color: $red;
+  }
+  .ref-item {
+    margin-bottom: 4px;
+  }
+  .ref-item a {
+    color: #2e6da4;
+  }
+  .ref-item a:hover {
+    color: #122b40;
+  }
 }
 

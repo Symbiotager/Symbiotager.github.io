@@ -5,7 +5,7 @@
 Symbiotager est une application web statique permettant de simuler son potager en insérant les diverses espèces de fruits et légumes, et de savoir si les interactions seront favorables ou défavorables. Symbiotager permet également d'obtenir facilement des informations sur la façon dont un parasite peut être éliminé par des plants compagnes.
 
 Deux versions du site sont générées :
-- **Version Paut** (par défaut, `index.html`) — données issues du projet Paut
+- **Version Paut** (par défaut, `index.html`) — données issues du projet Paut, avec poids des sources et interactivité sur les liens
 - **Version originale** (`MonPotager.html`) — données issues des Google Sheets
 
 ## Structure du projet
@@ -15,6 +15,7 @@ Symbiotager/
 ├── data/                       # Données CSV (espèces et interactions)
 │   ├── paut_formatted_especes.csv
 │   ├── paut_formatted_associations.csv
+│   ├── paut_references.csv     # Références bibliographiques Paut
 │   ├── especes_v2.csv
 │   ├── associations.csv
 │   └── ...
@@ -92,11 +93,21 @@ Un push sur `main` déclenche le workflow GitHub Actions (`.github/workflows/dep
 bash push_main_website.sh
 ```
 
+## Fonctionnalités spécifiques à la version Paut
+
+La version Paut (`index.html`) dispose de fonctionnalités supplémentaires exploitant les références bibliographiques du projet Paut :
+
+- **Épaisseur des liens** — les flèches d'interaction ont une épaisseur proportionnelle au nombre de sources (3 niveaux : fin ≤ 2, moyen 3–5, épais ≥ 6)
+- **Infobulle au survol** — au passage de la souris sur un lien, une infobulle affiche le nombre de sources en accord et en désaccord avec l'interaction
+- **Panneau de détail au clic** — un clic sur un lien affiche dans le panneau latéral la liste complète des références (avec liens vers les sources), en distinguant celles en accord (vert) et en désaccord (rouge)
+
+Ces données sont calculées à partir de `data/paut_references.csv` et des champs `references` et `weight` présents dans `data/paut_formatted_associations.csv`.
+
 ## Préparation des données
 
 Les scripts dans `scripts/` permettent de transformer les données brutes CSV :
 
-- `format_paut_data.py` — formate les données brutes du projet Paut (`data/paut_*.csv`) en `data/paut_formatted_*.csv`
+- `format_paut_data.py` — formate les données brutes du projet Paut (`data/paut_*.csv`) en `data/paut_formatted_*.csv`. Gère le sens directionnel des associations (colonne `Sens`) et valide les identifiants de références.
 - `merge_data.py` — fusionne les données Paut et Google Sheets en `data/merged_*.csv`
 
 ## Contribuer

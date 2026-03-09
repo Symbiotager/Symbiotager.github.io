@@ -23,6 +23,7 @@ instance/
 *.swp
 *.swo
 *~
+TODO.md 
 
 # OS
 .DS_Store

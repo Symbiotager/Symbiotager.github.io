@@ -131,6 +131,8 @@ function direction_interaction(direction, interaction, index) {
 
 function select_node(index) {
     is_selected = true;
+    $(".link-tooltip").remove();
+    $("#link-info").addClass("hidden");
     no_transparence();
     transparent(index);
     var cur_node = graph.nodes[index];
@@ -196,6 +198,79 @@ function select_node(index) {
         $ncbi_btn.removeClass("hidden");
         $ncbi_btn.attr("href", cur_node.ncbi);
     }
+}
+
+function select_link(d) {
+    is_selected = true;
+    $(".link-tooltip").remove();
+    no_transparence();
+    // Fade out everything except the selected link and its endpoints
+    link.filter(function (l) {
+        return l !== d;
+    }).transition().style("opacity", "0.12");
+    node.filter(function (n) {
+        return n.value !== d.source.value && n.value !== d.target.value;
+    }).transition().style("opacity", "0.12");
+
+    var inter_labels = {"pos": "favorise", "neg": "défavorise", "atr": "attire", "rep": "repousse"};
+    var inter_label = inter_labels[d.value] || d.value;
+
+    $("#link-info-name").html(
+        "<b>" + d.source.name + "</b> " + inter_label + " <b>" + d.target.name + "</b>"
+    );
+    $("#link-info-weight").text(
+        "Poids net : " + d.weight + " (" + d.n_agree + " source" + (d.n_agree > 1 ? "s" : "") + " pour" +
+        (d.n_disagree > 0 ? ", " + d.n_disagree + " contre" : "") + ")"
+    );
+
+    // Parse individual references from the refs string
+    var $refList = $("#link-info-refs");
+    $refList.empty();
+    if (d.refs) {
+        var agree_labels = {"pos": "favorise", "neg": "défavorise", "atr": "attire", "rep": "repousse"};
+        var parts = d.refs.split(",");
+        var current_ref = "";
+        for (var i = 0; i < parts.length; i++) {
+            var part = parts[i].trim();
+            if (part.indexOf("d'après") !== -1) {
+                if (current_ref) {
+                    append_ref($refList, current_ref, d.value);
+                }
+                current_ref = part;
+            } else {
+                current_ref += ", " + part;
+            }
+        }
+        if (current_ref) {
+            append_ref($refList, current_ref, d.value);
+        }
+    }
+
+    $("#info").addClass("hidden");
+    $("#link-info").removeClass("hidden");
+}
+
+function append_ref($container, ref_text, interaction_code) {
+    var agree_starts = {"pos": "favorise", "neg": "défavorise", "atr": "attire", "rep": "repousse"};
+    var is_agree = ref_text.toLowerCase().trim().indexOf(agree_starts[interaction_code]) === 0;
+    var icon_class = is_agree ? "glyphicon-ok-circle ref-agree" : "glyphicon-remove-circle ref-disagree";
+
+    // Extract the source name between quotes
+    var match = ref_text.match(/d'après\s+'([^']+)'/);
+    var ref_name = match ? match[1] : ref_text.replace(/^.*d'après\s+/, '').trim();
+    var ref_url = "";
+    if (typeof references !== "undefined" && references[ref_name]) {
+        ref_url = references[ref_name];
+    }
+
+    var $item = $('<div class="ref-item"></div>');
+    $item.append('<span class="glyphicon ' + icon_class + '"></span> ');
+    if (ref_url) {
+        $item.append($('<a></a>').attr("href", ref_url).attr("target", "_blank").text(ref_name));
+    } else {
+        $item.append($('<span></span>').text(ref_name));
+    }
+    $container.append($item);
 }
 
 var svg = d3.select("#graph"),
@@ -354,7 +429,14 @@ function add_node(cur_index, add_links) {
         for (var f = 0; f < graph.forward[cur_index].length; f++) {
             var f_link = graph.forward[cur_index][f];
             if (index_nodes.includes(f_link.target)) {
-                links.push({"source": cur_node, "target": graph.nodes[f_link.target], "value": f_link.value});
+                var link_data = {"source": cur_node, "target": graph.nodes[f_link.target], "value": f_link.value};
+                if (has_weights) {
+                    link_data.weight = f_link.weight || 1;
+                    link_data.n_agree = f_link.n_agree || 1;
+                    link_data.n_disagree = f_link.n_disagree || 0;
+                    link_data.refs = f_link.refs || "";
+                }
+                links.push(link_data);
             } else if (cat_animals.includes(f_link.group) && ["atr", "rep"].includes(f_link.value)) {
                 add_node(f_link.target);
             }
@@ -362,7 +444,14 @@ function add_node(cur_index, add_links) {
         for (var b = 0; b < graph.backward[cur_index].length; b++) {
             var b_link = graph.backward[cur_index][b];
             if (index_nodes.includes(b_link.source)) {
-                links.push({"source": graph.nodes[b_link.source], "target": cur_node, "value": b_link.value});
+                var link_data = {"source": graph.nodes[b_link.source], "target": cur_node, "value": b_link.value};
+                if (has_weights) {
+                    link_data.weight = b_link.weight || 1;
+                    link_data.n_agree = b_link.n_agree || 1;
+                    link_data.n_disagree = b_link.n_disagree || 0;
+                    link_data.refs = b_link.refs || "";
+                }
+                links.push(link_data);
             } else if (cat_animals.includes(b_link.group) && ["neg", "pos"].includes(b_link.value)) {
                 add_node(b_link.source);
             }
@@ -405,9 +494,17 @@ function restart() {
     link.exit().remove();
     link = link.enter().append("path")
         .attr("class", function (d) {
-            return "link " + d.value;
+            var cls = "link " + d.value;
+            if (has_weights) {
+                var w = d.weight || 1;
+                if (w >= 4) { cls += " weight-high"; }
+                else if (w >= 2) { cls += " weight-mid"; }
+                else { cls += " weight-low"; }
+            }
+            return cls;
         })
         .attr("marker-end", function (d) {
+            if (has_weights) return null;
             return "url(#" + d.value + ")";
         })
         .merge(link);
@@ -452,8 +549,38 @@ function restart() {
             event.stopPropagation();
         }
     });
+    // Link event handlers (mouseover tooltip + click to show sources)
+    if (has_weights) {
+        $(".link").on({
+            mouseenter: function (event) {
+                var $this = $(this);
+                var d = d3.select(this).datum();
+                if (!d) return;
+                var text = d.n_agree + " source" + (d.n_agree > 1 ? "s" : "") + " pour";
+                if (d.n_disagree > 0) {
+                    text += ", " + d.n_disagree + " contre";
+                }
+                var $tooltip = $('<div class="link-tooltip"></div>').text(text);
+                $("body").append($tooltip);
+                $tooltip.css({left: event.pageX + 10, top: event.pageY - 20});
+            },
+            mousemove: function (event) {
+                $(".link-tooltip").css({left: event.pageX + 10, top: event.pageY - 20});
+            },
+            mouseleave: function () {
+                $(".link-tooltip").remove();
+            },
+            click: function (event) {
+                var d = d3.select(this).datum();
+                if (!d) return;
+                select_link(d);
+                event.stopPropagation();
+            }
+        });
+    }
     $("#filter").click();
     $("#info").addClass("hidden");
+    $("#link-info").addClass("hidden");
     $('#save-btn').removeClass("hidden");
     is_selected = false;
     no_transparence();
@@ -506,6 +633,7 @@ function transparence_pest() {
 $(document).on('click', function (evt) {
     if (is_selected) {
         $("#info").addClass("hidden");
+        $("#link-info").addClass("hidden");
         is_selected = false;
         no_transparence();
         transparence_pest();
@@ -518,10 +646,18 @@ function tick() {
     });
 
     link.attr("d", function (d) {
-        var dx = d.target.x - d.source.x,
-            dy = d.target.y - d.source.y,
+        var sx, sy, tx, ty;
+        if (has_weights && d.source.value > d.target.value) {
+            sx = d.target.x; sy = d.target.y;
+            tx = d.source.x; ty = d.source.y;
+        } else {
+            sx = d.source.x; sy = d.source.y;
+            tx = d.target.x; ty = d.target.y;
+        }
+        var dx = tx - sx,
+            dy = ty - sy,
             dr = Math.sqrt(dx * dx + dy * dy);
-        return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+        return "M" + sx + "," + sy + "A" + dr + "," + dr + " 0 0,1 " + tx + "," + ty;
     })
 }
 

@@ -8,7 +8,9 @@ along with their respective data JS files and shared static assets.
 """
 
 import csv
+import json
 import os
+import re
 import shutil
 from datetime import datetime
 
@@ -65,9 +67,9 @@ def read_species_csv(filepath):
 
 def read_associations_csv(filepath, valid_species):
     """
-    Read an associations CSV file and return a list of (source, interaction_str, target) tuples.
+    Read an associations CSV file and return a list of tuples.
+    Returns (source, interaction_int, target, references_str, weight).
     Only includes associations where both source and target exist in valid_species.
-    Handles both paut_formatted and original formats (both have source, interaction, target in cols 0-2).
     """
     assocs = []
     with open(filepath, "r", newline="", encoding="utf-8") as f:
@@ -88,15 +90,86 @@ def read_associations_csv(filepath, valid_species):
                 continue
 
             inter_int = description_interactions[inter_str]
-            assocs.append((source, inter_int, target))
+            references = clean_string(row[3]) if len(row) > 3 else ''
+            weight = float(clean_string(row[4])) if len(row) > 4 and clean_string(row[4]) else 1.0
+            assocs.append((source, inter_int, target, references, weight))
     return assocs
+
+
+def filter_species_with_associations(species, associations):
+    """Remove species that have no associations at all."""
+    has_assoc = set()
+    for source, _, target, _, _ in associations:
+        has_assoc.add(source)
+        has_assoc.add(target)
+    removed = {name for name in species if name not in has_assoc}
+    if removed:
+        print(f"Removed {len(removed)} species with no associations")
+    return {name: sp for name, sp in species.items() if name in has_assoc}
+
+
+def read_references_csv(filepath):
+    """
+    Read paut_references.csv and return a dict mapping reference display name to URL.
+    """
+    refs = {}
+    with open(filepath, "r", newline="", encoding="utf-8") as f:
+        reader = csv.reader(f, delimiter=",", quotechar='"')
+        current_section = None
+        for row in reader:
+            if len(row) < 3:
+                continue
+            col0 = row[0].strip()
+            if col0 in ('Pages internet', 'Ouvrages', 'Outlis et applications'):
+                current_section = col0
+                continue
+            if col0 == 'id' or col0 == 'à faire' or col0 == '':
+                continue
+            try:
+                int(col0)
+            except ValueError:
+                continue
+            ref_name = row[1].strip()
+            ref_url = row[2].strip()
+            if ref_name:
+                refs[ref_name] = ref_url
+    return refs
+
+
+def count_agree_disagree(references_str, interaction_code):
+    """
+    Count how many individual source citations in the references string
+    agree with the current interaction, and how many disagree.
+    The references string has format like:
+      "Favorise d'après 'X', Défavorise d'après 'Y', Favorise d'après 'Z'"
+    Returns (n_agree, n_disagree).
+    """
+    if not references_str:
+        return (1, 0)
+    # Map interaction codes to their French labels
+    agree_label = interaction_forward.get(interaction_code, '').lower()
+    opposite = {'pos': 'neg', 'neg': 'pos', 'atr': 'rep', 'rep': 'atr'}
+    disagree_label = interaction_forward.get(opposite.get(interaction_code, ''), '').lower()
+
+    parts = [p.strip() for p in references_str.split(",") if "d'après" in p]
+    n_agree = 0
+    n_disagree = 0
+    for part in parts:
+        part_lower = part.lower().strip()
+        if part_lower.startswith(agree_label):
+            n_agree += 1
+        elif disagree_label and part_lower.startswith(disagree_label):
+            n_disagree += 1
+    if n_agree == 0 and n_disagree == 0:
+        n_agree = 1
+    return (n_agree, n_disagree)
 
 
 # ---------------------------------------------------------------------------
 # JS generation (rewritten from app.py generate_js without DB)
 # ---------------------------------------------------------------------------
 
-def generate_data_js(species, associations_raw):
+def generate_data_js(species, associations_raw, has_weights=False):
     """
     Build the data.js content from species dict and raw association list.
     Returns (js_content: str, examples: list, categories_list: list,
@@ -120,12 +193,26 @@ def generate_data_js(species, associations_raw):
 
     index_to_name = reverse_dict(name_to_index)
 
-    # Build unique association tuples (source_index, target_index, interaction_int)
-    associations_plant = set()
-    for source, inter_int, target in associations_raw:
+    # Build association dict: (source_idx, target_idx) → {inter_int, refs, weight}
+    # Using a dict to preserve weight/refs (unlike the old set-based approach)
+    associations_dict = {}
+    for source, inter_int, target, references, weight in associations_raw:
         si = name_to_index[source]
         ti = name_to_index[target]
-        associations_plant.add((si, ti, reverse_interactions[interactions[inter_int]]))
+        key = (si, ti)
+        inter_code = interactions[inter_int]
+        if key not in associations_dict:
+            associations_dict[key] = {
+                "inter_int": reverse_interactions[inter_code],
+                "inter_code": inter_code,
+                "refs": references,
+                "weight": weight,
+            }
+
+    # Build a set view for backward compatibility with examples/legend code
+    associations_plant = set()
+    for (si, ti), data in associations_dict.items():
+        associations_plant.add((si, ti, data["inter_int"]))
 
     # ---- Build JS string ----
     lines = []
@@ -148,13 +235,28 @@ def generate_data_js(species, associations_raw):
     lines.append('\t"forward":[')
     fwd_lines = []
     for index in sorted(index_to_name.keys()):
-        entries = ",".join(
-            '{{"target":{0},"value":"{1}","group":{2}}}'.format(
-                target, interactions[inter], appartenance[target]
-            )
-            for source, target, inter in associations_plant if source == index
-        )
-        fwd_lines.append("\t\t[" + entries + "]")
+        entries_list = []
+        for (si, ti), data in sorted(associations_dict.items()):
+            if si != index:
+                continue
+            inter_code = data["inter_code"]
+            weight = data["weight"]
+            refs = data["refs"]
+            n_agree, n_disagree = count_agree_disagree(refs, inter_code) if has_weights else (1, 0)
+            escaped_refs = refs.replace('\\', '\\\\').replace('"', '\\"') if has_weights else ""
+            if has_weights:
+                entries_list.append(
+                    '{{"target":{0},"value":"{1}","group":{2},"weight":{3},"n_agree":{4},"n_disagree":{5},"refs":"{6}"}}'.format(
+                        ti, inter_code, appartenance[ti], weight, n_agree, n_disagree, escaped_refs
+                    )
+                )
+            else:
+                entries_list.append(
+                    '{{"target":{0},"value":"{1}","group":{2}}}'.format(
+                        ti, inter_code, appartenance[ti]
+                    )
+                )
+        fwd_lines.append("\t\t[" + ",".join(entries_list) + "]")
     lines.append(",\n".join(fwd_lines))
     lines.append("\t],")
 
@@ -162,19 +264,37 @@ def generate_data_js(species, associations_raw):
     lines.append('\t"backward":[')
     bwd_lines = []
     for index in sorted(index_to_name.keys()):
-        entries = ",".join(
-            '{{"source":{0},"value":"{1}","group":{2}}}'.format(
-                source, interactions[inter], appartenance[source]
-            )
-            for source, target, inter in associations_plant if target == index
-        )
-        bwd_lines.append("\t\t[" + entries + "]")
+        entries_list = []
+        for (si, ti), data in sorted(associations_dict.items()):
+            if ti != index:
+                continue
+            inter_code = data["inter_code"]
+            weight = data["weight"]
+            refs = data["refs"]
+            n_agree, n_disagree = count_agree_disagree(refs, inter_code) if has_weights else (1, 0)
+            escaped_refs = refs.replace('\\', '\\\\').replace('"', '\\"') if has_weights else ""
+            if has_weights:
+                entries_list.append(
+                    '{{"source":{0},"value":"{1}","group":{2},"weight":{3},"n_agree":{4},"n_disagree":{5},"refs":"{6}"}}'.format(
+                        si, inter_code, appartenance[si], weight, n_agree, n_disagree, escaped_refs
+                    )
+                )
+            else:
+                entries_list.append(
+                    '{{"source":{0},"value":"{1}","group":{2}}}'.format(
+                        si, inter_code, appartenance[si]
+                    )
+                )
+        bwd_lines.append("\t\t[" + ",".join(entries_list) + "]")
     lines.append(",\n".join(bwd_lines))
     lines.append("\t]")
     lines.append("};")
 
+    # has_weights flag
+    lines.append("var has_weights = " + ("true" if has_weights else "false") + ";")
+
     # names list
-    lines.append('var names_liste = ["' + '","'.join(sorted(set(species_cat))) + '"];')
+    lines.append('var names_liste = ["' + '","'.join(sorted(set(species_cat.values()))) + '"];')
 
     # groups
     lines.append("var groups = {")
@@ -369,17 +489,24 @@ def build():
     print("\n--- Paut version (index.html) ---")
     paut_species = read_species_csv(os.path.join(DATA_DIR, "paut_formatted_especes.csv"))
     paut_assocs = read_associations_csv(os.path.join(DATA_DIR, "paut_formatted_associations.csv"), paut_species)
+    paut_species = filter_species_with_associations(paut_species, paut_assocs)
     print(f"Paut: {len(paut_species)} species, {len(paut_assocs)} associations")
 
+    # Load reference map for Paut version
+    ref_map = read_references_csv(os.path.join(DATA_DIR, "paut_references.csv"))
+    print(f"Paut references: {len(ref_map)} entries")
+
     (paut_js, paut_examples, paut_cats, paut_plant_ids, paut_animal_ids,
-     paut_dict_inter, paut_idx2name, paut_appart) = generate_data_js(paut_species, paut_assocs)
+     paut_dict_inter, paut_idx2name, paut_appart) = generate_data_js(paut_species, paut_assocs, has_weights=True)
+    # Append reference map as JS variable
+    paut_js += "\nvar references = " + json.dumps(ref_map, ensure_ascii=False) + ";\n"
     write_data_js(paut_js, "data_paut.min.js")
     render_html(
         output_filename="index.html",
         data_js_name="data_paut",
         version_label="Paut",
         other_url="MonPotager.html",
-        other_label="Version originale",
+        other_label="Inclure les nuisibles",
         examples=paut_examples,
         categories_list=paut_cats,
         cat_plants_ids=paut_plant_ids,
@@ -393,17 +520,18 @@ def build():
     print("\n--- Original version (MonPotager.html) ---")
     orig_species = read_species_csv(os.path.join(DATA_DIR, "especes_v2.csv"))
     orig_assocs = read_associations_csv(os.path.join(DATA_DIR, "associations.csv"), orig_species)
+    orig_species = filter_species_with_associations(orig_species, orig_assocs)
     print(f"Original: {len(orig_species)} species, {len(orig_assocs)} associations")
 
     (orig_js, orig_examples, orig_cats, orig_plant_ids, orig_animal_ids,
-     orig_dict_inter, orig_idx2name, orig_appart) = generate_data_js(orig_species, orig_assocs)
+     orig_dict_inter, orig_idx2name, orig_appart) = generate_data_js(orig_species, orig_assocs, has_weights=False)
     write_data_js(orig_js, "data_original.min.js")
     render_html(
         output_filename="MonPotager.html",
         data_js_name="data_original",
         version_label="Originale",
         other_url="index.html",
-        other_label="Version Paut (par défaut)",
+        other_label="Associations entre plantes",
         examples=orig_examples,
         categories_list=orig_cats,
         cat_plants_ids=orig_plant_ids,
