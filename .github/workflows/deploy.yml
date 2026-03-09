@@ -32,7 +32,8 @@ jobs:
         run: |
           git checkout website
           git rebase main
-          git reset --soft HEAD~1
+          git checkout main -- .
+          git reset HEAD
 
       - name: Generate static site
         run: python -m scripts.generate

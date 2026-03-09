@@ -7,7 +7,8 @@ git push origin main
 
 git checkout website
 git rebase main
-git reset --soft HEAD~1
+git checkout main -- .
+git reset HEAD
 
 source .venv/bin/activate
 python -m scripts.generate
