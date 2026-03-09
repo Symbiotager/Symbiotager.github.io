@@ -1,7 +1,7 @@
 # Generated output (built by scripts/generate.py)
 static/
-index.html
-MonPotager.html
+/index.html
+/MonPotager.html
 
 # Python
 __pycache__/
