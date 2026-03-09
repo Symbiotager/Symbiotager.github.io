@@ -169,9 +169,11 @@ def count_agree_disagree(references_str, interaction_code):
 # JS generation (rewritten from app.py generate_js without DB)
 # ---------------------------------------------------------------------------
 
-def generate_data_js(species, associations_raw, has_weights=False):
+def generate_data_js(species, associations_raw, has_weights=False, arrow_mode="all"):
     """
     Build the data.js content from species dict and raw association list.
+    arrow_mode: "all" (arrowheads on every link), "none" (no arrowheads),
+               "animals_only" (arrowheads only on links involving animals).
     Returns (js_content: str, examples: list, categories_list: list,
              cat_plants_ids: list, cat_animals_ids: list, dict_interactions: dict,
              index_to_name: dict, appartenance: dict)
@@ -292,6 +294,9 @@ def generate_data_js(species, associations_raw, has_weights=False):
 
     # has_weights flag
     lines.append("var has_weights = " + ("true" if has_weights else "false") + ";")
+
+    # arrow_mode
+    lines.append('var arrow_mode = "' + arrow_mode + '";')
 
     # names list
     lines.append('var names_liste = ["' + '","'.join(sorted(set(species_cat.values()))) + '"];')
@@ -432,7 +437,7 @@ def write_data_js(js_content, output_name):
 # ---------------------------------------------------------------------------
 
 def render_html(output_filename, data_js_name, version_label,
-                other_url, other_label,
+                datasets,
                 examples, categories_list, cat_plants_ids, cat_animals_ids,
                 dict_interactions, index_to_name, appartenance):
     """Render the Jinja2 template to an HTML file."""
@@ -460,8 +465,8 @@ def render_html(output_filename, data_js_name, version_label,
         interactions=dict_interactions,
         appartenance=sorted_appartenance,
         version_label=version_label,
-        other_version_url=other_url,
-        other_version_label=other_label,
+        datasets=datasets,
+        current_url=output_filename,
     ).dump(output_path)
 
     print(OKGREEN + f"Generated {output_filename}" + ENDC)
@@ -485,28 +490,67 @@ def build():
     # 3. Minify MonPotager.js
     minify_js()
 
-    # 4. Paut version (default → index.html)
+    # 4. Load all three datasets
+    # --- Paut ---
     print("\n--- Paut version (index.html) ---")
     paut_species = read_species_csv(os.path.join(DATA_DIR, "paut_formatted_especes.csv"))
     paut_assocs = read_associations_csv(os.path.join(DATA_DIR, "paut_formatted_associations.csv"), paut_species)
     paut_species = filter_species_with_associations(paut_species, paut_assocs)
     print(f"Paut: {len(paut_species)} species, {len(paut_assocs)} associations")
 
-    # Load reference map for Paut version
     ref_map = read_references_csv(os.path.join(DATA_DIR, "paut_references.csv"))
     print(f"Paut references: {len(ref_map)} entries")
 
     (paut_js, paut_examples, paut_cats, paut_plant_ids, paut_animal_ids,
-     paut_dict_inter, paut_idx2name, paut_appart) = generate_data_js(paut_species, paut_assocs, has_weights=True)
-    # Append reference map as JS variable
+     paut_dict_inter, paut_idx2name, paut_appart) = generate_data_js(
+        paut_species, paut_assocs, has_weights=True, arrow_mode="none")
     paut_js += "\nvar references = " + json.dumps(ref_map, ensure_ascii=False) + ";\n"
     write_data_js(paut_js, "data_paut.min.js")
+
+    # --- Original ---
+    print("\n--- Original version (MonPotager.html) ---")
+    orig_species = read_species_csv(os.path.join(DATA_DIR, "especes_v2.csv"))
+    orig_assocs = read_associations_csv(os.path.join(DATA_DIR, "associations.csv"), orig_species)
+    orig_species = filter_species_with_associations(orig_species, orig_assocs)
+    print(f"Original: {len(orig_species)} species, {len(orig_assocs)} associations")
+
+    (orig_js, orig_examples, orig_cats, orig_plant_ids, orig_animal_ids,
+     orig_dict_inter, orig_idx2name, orig_appart) = generate_data_js(
+        orig_species, orig_assocs, has_weights=False, arrow_mode="all")
+    write_data_js(orig_js, "data_original.min.js")
+
+    # --- Merged ---
+    print("\n--- Merged version (merged.html) ---")
+    merged_species = read_species_csv(os.path.join(DATA_DIR, "merged_especes.csv"))
+    merged_assocs = read_associations_csv(os.path.join(DATA_DIR, "merged_associations.csv"), merged_species)
+    merged_species = filter_species_with_associations(merged_species, merged_assocs)
+    print(f"Merged: {len(merged_species)} species, {len(merged_assocs)} associations")
+
+    (merged_js, merged_examples, merged_cats, merged_plant_ids, merged_animal_ids,
+     merged_dict_inter, merged_idx2name, merged_appart) = generate_data_js(
+        merged_species, merged_assocs, has_weights=True, arrow_mode="animals_only")
+    merged_js += "\nvar references = " + json.dumps(ref_map, ensure_ascii=False) + ";\n"
+    write_data_js(merged_js, "data_merged.min.js")
+
+    # 5. Build datasets list for template
+    datasets = [
+        {"label": "Associations entre plantes", "url": "index.html",
+         "n_species": len(paut_species), "n_assoc": len(paut_assocs),
+         "description": "Uniquement les associations entre plantes, issues du projet Paut et\u00a0al."},
+        {"label": "Inclure les nuisibles", "url": "MonPotager.html",
+         "n_species": len(orig_species), "n_assoc": len(orig_assocs),
+         "description": "Inclut les nuisibles et auxiliaires, à partir de deux ouvrages de référence."},
+        {"label": "Données fusionnées", "url": "merged.html",
+         "n_species": len(merged_species), "n_assoc": len(merged_assocs),
+         "description": "Fusion des deux sources de données ci-dessus."},
+    ]
+
+    # 6. Render all three HTML pages
     render_html(
         output_filename="index.html",
         data_js_name="data_paut",
         version_label="Paut",
-        other_url="MonPotager.html",
-        other_label="Inclure les nuisibles",
+        datasets=datasets,
         examples=paut_examples,
         categories_list=paut_cats,
         cat_plants_ids=paut_plant_ids,
@@ -515,23 +559,11 @@ def build():
         index_to_name=paut_idx2name,
         appartenance=paut_appart,
     )
-
-    # 5. Original version (→ MonPotager.html)
-    print("\n--- Original version (MonPotager.html) ---")
-    orig_species = read_species_csv(os.path.join(DATA_DIR, "especes_v2.csv"))
-    orig_assocs = read_associations_csv(os.path.join(DATA_DIR, "associations.csv"), orig_species)
-    orig_species = filter_species_with_associations(orig_species, orig_assocs)
-    print(f"Original: {len(orig_species)} species, {len(orig_assocs)} associations")
-
-    (orig_js, orig_examples, orig_cats, orig_plant_ids, orig_animal_ids,
-     orig_dict_inter, orig_idx2name, orig_appart) = generate_data_js(orig_species, orig_assocs, has_weights=False)
-    write_data_js(orig_js, "data_original.min.js")
     render_html(
         output_filename="MonPotager.html",
         data_js_name="data_original",
         version_label="Originale",
-        other_url="index.html",
-        other_label="Associations entre plantes",
+        datasets=datasets,
         examples=orig_examples,
         categories_list=orig_cats,
         cat_plants_ids=orig_plant_ids,
@@ -539,6 +571,19 @@ def build():
         dict_interactions=orig_dict_inter,
         index_to_name=orig_idx2name,
         appartenance=orig_appart,
+    )
+    render_html(
+        output_filename="merged.html",
+        data_js_name="data_merged",
+        version_label="Fusionnée",
+        datasets=datasets,
+        examples=merged_examples,
+        categories_list=merged_cats,
+        cat_plants_ids=merged_plant_ids,
+        cat_animals_ids=merged_animal_ids,
+        dict_interactions=merged_dict_inter,
+        index_to_name=merged_idx2name,
+        appartenance=merged_appart,
     )
 
     print("\n" + OKGREEN + "Build complete!" + ENDC)

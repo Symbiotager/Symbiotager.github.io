@@ -504,7 +504,12 @@ function restart() {
             return cls;
         })
         .attr("marker-end", function (d) {
-            if (has_weights) return null;
+            if (arrow_mode === "none") return null;
+            if (arrow_mode === "animals_only") {
+                var sg = d.source.group || d.source;
+                var tg = d.target.group || d.target;
+                if (!cat_animals.includes(sg) && !cat_animals.includes(tg)) return null;
+            }
             return "url(#" + d.value + ")";
         })
         .merge(link);
@@ -646,14 +651,19 @@ function tick() {
     });
 
     link.attr("d", function (d) {
-        var sx, sy, tx, ty;
-        if (has_weights && d.source.value > d.target.value) {
-            sx = d.target.x; sy = d.target.y;
-            tx = d.source.x; ty = d.source.y;
-        } else {
-            sx = d.source.x; sy = d.source.y;
-            tx = d.target.x; ty = d.target.y;
+        var swap = false;
+        if (arrow_mode === "none") {
+            swap = d.source.value > d.target.value;
+        } else if (arrow_mode === "animals_only") {
+            var sg = d.source.group, tg = d.target.group;
+            if (!cat_animals.includes(sg) && !cat_animals.includes(tg)) {
+                swap = d.source.value > d.target.value;
+            }
         }
+        var sx = swap ? d.target.x : d.source.x,
+            sy = swap ? d.target.y : d.source.y,
+            tx = swap ? d.source.x : d.target.x,
+            ty = swap ? d.source.y : d.target.y;
         var dx = tx - sx,
             dy = ty - sy,
             dr = Math.sqrt(dx * dx + dy * dy);
