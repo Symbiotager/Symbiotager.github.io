@@ -9,6 +9,7 @@ git checkout website
 git rebase main
 git reset --soft HEAD~1
 
+source .venv/bin/activate
 python -m scripts.generate
 
 git add --force static/ index.html MonPotager.html
