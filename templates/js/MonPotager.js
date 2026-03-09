@@ -448,7 +448,6 @@ function restart() {
             }
         },
         click: function (event) {
-            document.getElementById("myInput3").value = $(this).parent().children()[1].innerHTML;
             select_node($(this).attr("value"));
             event.stopPropagation();
         }
