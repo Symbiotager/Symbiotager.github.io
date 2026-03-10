@@ -16,10 +16,8 @@ import polars as pl
 
 # Ensure scripts/ is importable
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from scripts.constants import (
-    ENDC, FAIL, OKBLUE, OKGREEN, WARNING,
-    categories, clean_string, interaction_forward, most_complete,
-)
+from scripts.constants import *
+from scripts.function_search_taxonomy import enrich_species_db
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 
@@ -274,6 +272,10 @@ def main():
     print(f"Interactions with 0 or negative weight: {neg_count}")
     prune_associations()
     print(f"Associations count after pruning: {len(interactions_db)}")
+
+    # Enrich species with Wikipedia and NCBI taxonomy data
+    print("\nEnriching species with Wikipedia/NCBI data...")
+    enrich_species_db(species_db, clean_string)
 
     save_species_csv(os.path.join(DATA_DIR, 'paut_formatted_especes.csv'))
     save_associations_csv(os.path.join(DATA_DIR, 'paut_formatted_associations.csv'))

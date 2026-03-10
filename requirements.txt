@@ -2,3 +2,8 @@ libsass
 jsmin
 Jinja2
 polars
+Wikipedia
+Biopython
+requests
+beautifulsoup4
+lxml

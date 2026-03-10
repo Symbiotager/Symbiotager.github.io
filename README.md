@@ -23,7 +23,8 @@ Symbiotager/
 │   ├── generate.py             # Générateur de site statique
 │   ├── constants.py            # Constantes partagées (couleurs, catégories)
 │   ├── format_paut_data.py     # Formatage des données Paut brutes
-│   └── merge_data.py           # Fusion des données Paut + Google Sheets
+│   ├── merge_data.py           # Fusion des données Paut + Google Sheets
+│   └── function_search_taxonomy.py  # Enrichissement Wikipedia / NCBI
 ├── templates/                  # Sources des assets et template HTML
 │   ├── MonPotager.html         # Template Jinja2
 │   ├── MonPotager.css.scss     # SCSS source
@@ -107,8 +108,22 @@ Ces données sont calculées à partir de `data/paut_references.csv` et des cham
 
 Les scripts dans `scripts/` permettent de transformer les données brutes CSV :
 
-- `format_paut_data.py` — formate les données brutes du projet Paut (`data/paut_*.csv`) en `data/paut_formatted_*.csv`. Gère le sens directionnel des associations (colonne `Sens`) et valide les identifiants de références.
-- `merge_data.py` — fusionne les données Paut et Google Sheets en `data/merged_*.csv`
+- `format_paut_data.py` — formate les données brutes du projet Paut (`data/paut_*.csv`) en `data/paut_formatted_*.csv`. Gère le sens directionnel des associations (colonne `Sens`), valide les identifiants de références, puis **enrichit automatiquement les espèces** sans lien Wikipedia via `function_search_taxonomy.py` (URL Wikipedia, rang taxonomique, TaxID NCBI). L'enrichissement est incrémental : les espèces déjà renseignées sont ignorées.
+- `merge_data.py` — fusionne les données Paut et Google Sheets en `data/merged_*.csv`. Applique les mêmes étapes de déduplication et d'enrichissement. Les interactions impliquant une espèce animale (Nuisible ou Auxiliaire) reçoivent un poids minimal de **3.0** pour refléter leur importance agronomique.
+- `function_search_taxonomy.py` — fonctions utilitaires pour récupérer le nom latin (via Wikipedia), le rang taxonomique et l'identifiant NCBI (`find_latin_name`, `find_tax_id`).
+
+### Ordre d'exécution recommandé
+
+```bash
+# 1. Formater les données Paut (enrichissement Wikipedia/NCBI intégré)
+python -m scripts.format_paut_data
+
+# 2. Fusionner Paut + Google Sheets (enrichissement + weight fix intégrés)
+python -m scripts.merge_data
+
+# 3. Générer le site statique
+python -m scripts.generate
+```
 
 ## Contribuer
 

@@ -1,249 +1,249 @@
 common_name,category,wiki,taxonomy,latin_name,TaxID,NCBI,name
-abricot,Fruit,,Rosaceae,Prunus armeniaca L.,,,abricot
-absinthe,Arômate,,Asteraceae,Artemisia vulgaris,,,absinthe
-achillée,Arômate,,Asteraceae,Achillea millefolium L.,,,achillée
-agrumes,Fruit,,Rutaceae,Citrus L.,,,agrumes
-ail,Légume,,Alliaceae,Allium sativum L.,,,ail
-alysson,Arômate,,Brassicaceae,Alyssum,,,alysson
-amandes,Fruit,,Rosaceae,Prunus dulcis,,,amandes
-aneth,Arômate,,Apiaceae,Anethum graveolens L.,,,aneth
-angélique,Arômate,,Apiaceae,Angelica archangelica L.,,,angélique
-anis,Arômate,,Apiaceae,Pimpinella anisum L.,,,anis
-arachide,Légume,,Fabaceae,Arachis hypogaea L.,,,arachide
-arbres fruitiers,Fruit,,Fruit trees,None,,,arbres fruitiers
-armoise,Arômate,,Asteraceae,Artemisia absinthium L.,,,armoise
-aromatique,Arômate,,Miscellaneous,Miscellaneous,,,aromatique
-arroche,Légume,,Chenopodiaceae,Atriplex halimus L.,,,arroche
-artichaut,Légume,,Asteraceae,Cynara cardunculus,,,artichaut
-asperge,Légume,,Asparagaceae,Asparagus officinalis,,,asperge
-aster,Arômate,,Asteraceae,Aster,,,aster
-aubergine,Légume,,Solanaceae,Solanum melongena L.,,,aubergine
-avoine,Céréale,,Poaceae,Avena sativa L.,,,avoine
-banane,Fruit,,Musaceae,Musa L.,,,banane
-basilic,Arômate,,Lamiaceae,Ocimum basilicum L.,,,basilic
-bette et carde,Légume,,Amaranthaceae,Beta vulgaris L. ssp. cicla L. W.D.J. Koch,,,bette et carde
-betterave,Légume,,Amaranthaceae,Beta vulgaris L.,,,betterave
-betterave botte,Légume,,Amaranthaceae,Beta vulgaris L.,,,betterave botte
-betterave conservation,Légume,,Amaranthaceae,Beta vulgaris L.,,,betterave conservation
+abricot,Fruit,https://fr.wikipedia.org/wiki/Abricot,Rosaceae,Prunus armeniaca L.,,,abricot
+absinthe,Arômate,https://fr.wikipedia.org/wiki/Absinthe_(spiritueux),Asteraceae,Artemisia vulgaris,4220,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4220,absinthe
+achillée,Arômate,https://fr.wikipedia.org/wiki/Achill%C3%A9e,Asteraceae,Achillea millefolium L.,,,achillée
+agrumes,Fruit,https://fr.wikipedia.org/wiki/Agrume,Rutaceae,Citrus L.,,,agrumes
+ail,Légume,https://fr.wikipedia.org/wiki/Ail_cultiv%C3%A9,Alliaceae,Allium sativum L.,,,ail
+alysson,Arômate,https://fr.wikipedia.org/wiki/Alysson_Paradis,Brassicaceae,Alyssum,169067,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=169067,alysson
+amandes,Fruit,https://fr.wikipedia.org/wiki/Amande,Rosaceae,Prunus dulcis,3755,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3755,amandes
+aneth,Arômate,https://fr.wikipedia.org/wiki/Aneth,Apiaceae,Anethum graveolens L.,,,aneth
+angélique,Arômate,https://fr.wikipedia.org/wiki/Ang%C3%A9lique_officinale,Apiaceae,Angelica archangelica L.,,,angélique
+anis,Arômate,https://fr.wikipedia.org/wiki/Anis_vert,Apiaceae,Pimpinella anisum L.,,,anis
+arachide,Légume,https://fr.wikipedia.org/wiki/Arachide,Fabaceae,Arachis hypogaea L.,,,arachide
+arbres fruitiers,Fruit,https://fr.wikipedia.org/wiki/Arbre_fruitier,Fruit trees,None,32644,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=32644,arbres fruitiers
+armoise,Arômate,https://fr.wikipedia.org/wiki/Armoise,Asteraceae,Artemisia absinthium L.,,,armoise
+aromatique,Arômate,https://fr.wikipedia.org/wiki/Plante_aromatique,Miscellaneous,Miscellaneous,,,aromatique
+arroche,Légume,https://fr.wikipedia.org/wiki/Arroche_des_jardins,Chenopodiaceae,Atriplex halimus L.,,,arroche
+artichaut,Légume,https://fr.wikipedia.org/wiki/Artichaut,Asteraceae,Cynara cardunculus,4265,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4265,artichaut
+asperge,Légume,https://fr.wikipedia.org/wiki/Asperge,Asparagaceae,Asparagus officinalis,4686,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4686,asperge
+aster,Arômate,https://fr.wikipedia.org/wiki/Aster_(missile),Asteraceae,Aster,41479,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=41479,aster
+aubergine,Légume,https://fr.wikipedia.org/wiki/Aubergine,Solanaceae,Solanum melongena L.,,,aubergine
+avoine,Céréale,https://fr.wikipedia.org/wiki/Avoine_cultiv%C3%A9e,Poaceae,Avena sativa L.,,,avoine
+banane,Fruit,https://fr.wikipedia.org/wiki/Banane,Musaceae,Musa L.,,,banane
+basilic,Arômate,https://fr.wikipedia.org/wiki/Basilic_(mythologie),Lamiaceae,Ocimum basilicum L.,39350,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=39350,basilic
+bette et carde,Légume,https://fr.wikipedia.org/wiki/Bette_(plante),Amaranthaceae,Beta vulgaris L. ssp. cicla L. W.D.J. Koch,,,bette et carde
+betterave,Légume,https://fr.wikipedia.org/wiki/Betterave,Amaranthaceae,Beta vulgaris L.,,,betterave
+betterave botte,Légume,https://fr.wikipedia.org/wiki/Betterave_potag%C3%A8re,Amaranthaceae,Beta vulgaris L.,,,betterave botte
+betterave conservation,Légume,https://fr.wikipedia.org/wiki/Betterave_potag%C3%A8re,Amaranthaceae,Beta vulgaris L.,,,betterave conservation
 blettes,Légume,,Amaranthaceae,Beta vulgaris L. ssp. cicla L. W.D.J. Koch,,,blettes
-blé,Céréale,,Poaceae,Triticum aestivum L.,,,blé
-blé dur,Légume,,Poaceae,Triticum durum Desf.,,,blé dur
-bourrache,Arômate,,Boraginaceae,Borago officinalis L.,,,bourrache
-brocoli,Légume,,Brassicaceae,Brassica oleracea L. var. botrytis,,,brocoli
-café,Légume,,Rubiaceae,Coffea canephora Pierre ex Froehner,,,café
-calebasse,Légume,,Cucurbitaceae,Lagenaria siceraria (Molina) Standl.,,,calebasse
-camomille,Arômate,,Asteraceae,Chamaemelum nobile L.,,,camomille
-capucine,Arômate,,Tropaeolaceae,Tropaeolum,,,capucine
-cardon,Légume,,Asteraceae,Cynara cardunculus var. altilis,,,cardon
-carotte,Légume,,Apiaceae,Daucus carota L. var. sativus Hoffm.,,,carotte
-carotte botte,Légume,,Apiaceae,Daucus carota L. var. sativus Hoffm.,,,carotte botte
-carotte conservation,Légume,,Apiaceae,Daucus carota L. var. sativus Hoffm.,,,carotte conservation
-carvi,Arômate,,Apiaceae,Carum carvi L.,,,carvi
-cassis,Fruit,,Grossulariaceae,Ribes nigrum,,,cassis
-cerfeuil,Arômate,,Apiaceae,Anthriscus cerefolium L.,,,cerfeuil
-cerise,Fruit,,Rosaceae,Prunus avium,,,cerise
-chicoree frisee,Légume,,Asteraceae,Cichorium endivia L.,,,chicoree frisee
-chicorée,Légume,,Asteraceae,Cichorium endivia L.,,,chicorée
-chou,Légume,,Brassicaceae,Brassica oleracea L.,,,chou
-chou caraïbe,Légume,,Araceae,Xanthosoma sagittifolium,,,chou caraïbe
-chou chinois,Légume,,Brassicaceae,Brassica rapa subsp. Pekinensis,,,chou chinois
-chou de bruxelles,Légume,,Brassicaceae,Brassica oleracea L. var. gemmifera DC.,,,chou de bruxelles
-chou kale,Légume,,Brassicaceae,Brassica oleracea L. var. acephala DC.,,,chou kale
-chou romanesco,Légume,,Brassicaceae,Brassica oleracea var. botrytis,,,chou romanesco
-chou-fleur,Légume,,Brassicaceae,Brassica oleracea L. var. italica,,,chou-fleur
-chou-rave,Légume,,Brassicaceae,Brassica oleracea L. var. gongylodes,,,chou-rave
-choux,Légume,,Brassicaceae,None,,,choux
-choux autres,Légume,,Brassicaceae,Brassica oleracea,,,choux autres
-choux de milan,Légume,,Brassicaceae,Brassica oleracea var. sabauda L.,,,choux de milan
-chrysanthème,Arômate,,Asteraceae,Chrysanthemum,,,chrysanthème
-ciboulette,Arômate,,Alliaceae,Allium schoenoprasum L.,,,ciboulette
-citron,Fruit,,Rutaceae,Citrus medica L.,,,citron
-citron jambhiri,Légume,,Rutaceae,Citrus jambhiri Lush.,,,citron jambhiri
-citronelle,Arômate,,Poaceae,Cymbopogon citratus,,,citronelle
-citronnier,Fruit,,Rutaceae,Citrus limon L.,,,citronnier
-citrouille,Légume,,Cucurbitaceae,Cucurbita pepo L. var. pepo,,,citrouille
-"citrouille, potiron et courges",Légume,,Cucurbitaceae,Cucurbita maxima Duchesne,,,"citrouille, potiron et courges"
-concombre,Légume,,Cucurbitaceae,Cucumis sativus L.,,,concombre
-consoude,Arômate,,Boraginaceae,Symphytum officinale,,,consoude
-coreopsis,Arômate,,Asteraceae,Coreopsis,,,coreopsis
-coriandre,Arômate,,Apiaceae,Coriandrum sativum L.,,,coriandre
-cornichon,Légume,,Cucurbitaceae,Cucumis anguria,,,cornichon
-courge butternut,Légume,,Cucurbitaceae,Cucurbita moschata,,,courge butternut
-"courge, citrouille, potiron",Légume,,Cucurbitaceae,None,,,"courge, citrouille, potiron"
-courges,Légume,,Cucurbitaceae,Cucurbita maxima Duchesne,,,courges
-courgette,Légume,,Cucurbitaceae,Cucurbita pepo var. cylindrica,,,courgette
-cresson,Légume,,Brassicaceae,Nasturtium officinale,,,cresson
-crosne,Légume,,Lamiaceae,Stachys affinis,,,crosne
-crotalaire,Arômate,,Fabaceae,Crotalaria juncea L.,,,crotalaire
-cucurbitaceae,Légume,,Cucurbitaceae,None,,,cucurbitaceae
-cumin,Arômate,,Apiaceae,Cuminum cyminum,,,cumin
-curcuma,Arômate,,Zingiberaceae,Curcuma longa L.,,,curcuma
-cébette,Légume,,Alliaceae,Allium fistulosum L.,,,cébette
-céleri branche,Légume,,Apiaceae,Apium graveolens L.,,,céleri branche
-céleri-rave,Légume,,Apiaceae,Apium graveolens L. var. rapaceum (Mill.) Gaudin,,,céleri-rave
-céleris,Légume,,Apiaceae,Apium graveolens L.,,,céleris
-dahlia,Arômate,,Asteraceae,Dahlia pinnata,,,dahlia
-dauphinelle,Arômate,,Ranunculaceae,Delphinium L.,,,dauphinelle
-digitale,Arômate,,Scrophulariaceae,Digitalis purpurea L.,,,digitale
-dolique,Légume,,Fabaceae,Vigna unguiculata subsp. Cylindrica,,,dolique
-echalote,Légume,,Alliaceae,Allium cepa var. aggregatum,,,echalote
-endive,Légume,,Asteraceae,Cichorium endivia,,,endive
-epeautre,Céréale,,Poaceae,Triticum spelta L.,,,epeautre
-epinard,Légume,,Amaranthaceae,Spinacia oleracea L.,,,epinard
-estragon,Arômate,,Asteraceae,Artemisia dracunculus,,,estragon
-eucalyptus,Légume,,Myrtaceae,Eucalyptus torelliana F.V. Mueller,,,eucalyptus
-euphorbe,Arômate,,Euphorbiaceae,Euphorbia antiquorum L.,,,euphorbe
-fenouil,Légume,,Apiaceae,Foeniculum vulgare Mill.,,,fenouil
-fenugrec,Légume,,Fabaceae,Trigonella foenum-graecum L.,,,fenugrec
-feve,Légume,,Fabaceae,Vicia faba L.,,,feve
-figue,Fruit,,Moraceae,Ficus carica,,,figue
-fraise,Fruit,,Rosaceae,Fragaria × ananassa (Weston),,,fraise
-framboise,Fruit,,Rosaceae,Rubus idaeus,,,framboise
-frisée,Légume,,Asteraceae,Cichorium endivia L.,,,frisée
-fève fèverole,Légume,,Fabaceae,Vicia faba L.,,,fève fèverole
-féverole,Légume,,Fabaceae,Vicia faba L.,,,féverole
-gesse,Légume,,Fabaceae,Lathyrus sativus L.,,,gesse
-glaïeul,Arômate,,Iridaceae,Gladiolus communis L.,,,glaïeul
-glycine tubéreuse,Légume,,Fabaceae,Apios americana Medik.,,,glycine tubéreuse
-gombo,Légume,,Malvaceae,Abelmoschus esculentus,,,gombo
-groseille,Fruit,,Grossulariaceae,Ribes uva-crispa,,,groseille
-haricot,Légume,,Fabaceae,Phaseolus vulgaris,,,haricot
-haricot de guar,Légume,,Fabaceae,Cyamopsis tetragonoloba L. Taubert,,,haricot de guar
-haricot vert,Légume,,Fabaceae,Phaseolus vulgaris,,,haricot vert
-haricot à ecosser et demi-secs,Légume,,Fabaceae,Phaseolus vulgaris,,,haricot à ecosser et demi-secs
-haricots,Légume,,Fabaceae,Phaseolus vulgaris,,,haricots
-herbe,Arômate,,Poaceae,Poa L.,,,herbe
-hosta,Arômate,,Asparagaceae,Hosta L.,,,hosta
-hysope,Arômate,,Lamiaceae,Hyssopus officinalis,,,hysope
-hévéa,Arbres,,Euphorbiaceae,Hevea brasiliensis,,,hévéa
-ignam,Légume,,Dioscoreaceae,Dioscorea alata L.,,,ignam
-jujube,Fruit,,Rhamnaceae,Ziziphus zizyphus L. Karst.,,,jujube
-kiwi,Fruit,,Actinidiaceae,Actinidia deliciosa,,,kiwi
-lablab,Légume,,Fabaceae,Lablab purpureus L.,,,lablab
-laitue,Légume,,Asteraceae,Lactuca sativa L.,,,laitue
-laurier sauce,Arômate,,Lauraceae,Laurus nobilis L.,,,laurier sauce
-lavande,Arômate,,Lamiaceae,Lavandula L.,,,lavande
-lentille,Légume,,Fabaceae,Lens culinaris,,,lentille
-lilas,Arômate,,Oleaceae,Syringa vulgaris,,,lilas
-lin,Céréale,,Linaceae,Linum usitatissimum,,,lin
-livèche,Arômate,,Apiaceae,Levisticum officinale,,,livèche
-lupin,Arômate,,Fabaceae,Lupinus L.,,,lupin
-luzerne,Arômate,,Fabaceae,Medicago sativa L.,,,luzerne
-macadamia,Légume,,Proteaceae,Macadamia integrifolia Maiden & Betche,,,macadamia
-maceron,Arômate,,Apiaceae,Smyrnium olusatrum,,,maceron
-malanga,Légume,,Araceae,Xanthosoma sagittifolium L. Schott,,,malanga
-manioc,Légume,,Euphorbiaceae,Manihot esculenta Crantz,,,manioc
-maïs,Légume,,Poaceae,Zea mays L.,,,maïs
-maïs doux,Légume,,Poaceae,Zea mays L.,,,maïs doux
-melon,Légume,,Cucurbitaceae,Cucumis melo L.,,,melon
-menthe,Arômate,,Lamiaceae,Mentha spicata L.,,,menthe
-mesclun,Légume,,Miscellaneous,Miscellaneous,,,mesclun
-mil,Céréale,,Poaceae,Pennisetum americanum L. Leeke,,,mil
-millet,Céréale,,Poaceae,Pennisetum glaucum,,,millet
-millet des oiseaux,Légume,,Poaceae,Setaria italica L. P. Beauv.,,,millet des oiseaux
-moutarde,Légume,,Brassicaceae,Brassica juncea L.,,,moutarde
-myrtilles,Fruit,,Ericaceae,Vaccinium myrtillus,,,myrtilles
-mâche,Légume,,Caprifoliaceae,Valerianella locusta,,,mâche
-mélisse,Arômate,,Lamiaceae,Melissa officinalis L.,,,mélisse
+blé,Céréale,https://fr.wikipedia.org/wiki/Bl%C3%A9,Poaceae,Triticum aestivum L.,,,blé
+blé dur,Légume,https://fr.wikipedia.org/wiki/Bl%C3%A9_dur,Poaceae,Triticum durum Desf.,,,blé dur
+bourrache,Arômate,https://fr.wikipedia.org/wiki/Bourrache_officinale,Boraginaceae,Borago officinalis L.,,,bourrache
+brocoli,Légume,https://fr.wikipedia.org/wiki/Brocoli,Brassicaceae,Brassica oleracea L. var. botrytis,33196,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=33196,brocoli
+café,Légume,https://fr.wikipedia.org/wiki/Caf%C3%A9,Rubiaceae,Coffea canephora Pierre ex Froehner,,,café
+calebasse,Légume,https://fr.wikipedia.org/wiki/Cucurbitaceae,Cucurbitaceae,Lagenaria siceraria (Molina) Standl.,,,calebasse
+camomille,Arômate,https://fr.wikipedia.org/wiki/Camomille,Asteraceae,Chamaemelum nobile L.,,,camomille
+capucine,Arômate,https://fr.wikipedia.org/wiki/Capucine_Anav,Tropaeolaceae,Tropaeolum,4019,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4019,capucine
+cardon,Légume,https://fr.wikipedia.org/wiki/Cynara_cardunculus,Asteraceae,Cynara cardunculus var. altilis,341669,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=341669,cardon
+carotte,Légume,https://fr.wikipedia.org/wiki/Carotte,Apiaceae,Daucus carota L. var. sativus Hoffm.,,,carotte
+carotte botte,Légume,https://fr.wikipedia.org/wiki/Botte_(agriculture),Apiaceae,Daucus carota L. var. sativus Hoffm.,,,carotte botte
+carotte conservation,Légume,https://fr.wikipedia.org/wiki/Carotte,Apiaceae,Daucus carota L. var. sativus Hoffm.,,,carotte conservation
+carvi,Arômate,https://fr.wikipedia.org/wiki/Carvi,Apiaceae,Carum carvi L.,,,carvi
+cassis,Fruit,https://fr.wikipedia.org/wiki/Cassis_(fruit),Grossulariaceae,Ribes nigrum,78511,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=78511,cassis
+cerfeuil,Arômate,https://fr.wikipedia.org/wiki/Cerfeuil_commun,Apiaceae,Anthriscus cerefolium L.,,,cerfeuil
+cerise,Fruit,https://fr.wikipedia.org/wiki/Cerise,Rosaceae,Prunus avium,42229,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=42229,cerise
+chicoree frisee,Légume,https://fr.wikipedia.org/wiki/Chicor%C3%A9e_fris%C3%A9e,Asteraceae,Cichorium endivia L.,,,chicoree frisee
+chicorée,Légume,https://fr.wikipedia.org/wiki/Chicor%C3%A9e,Asteraceae,Cichorium endivia L.,,,chicorée
+chou,Légume,https://fr.wikipedia.org/wiki/Chou-fleur,Brassicaceae,Brassica oleracea L.,,,chou
+chou caraïbe,Légume,https://fr.wikipedia.org/wiki/Colocasia_esculenta,Araceae,Xanthosoma sagittifolium,28478,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=28478,chou caraïbe
+chou chinois,Légume,https://fr.wikipedia.org/wiki/P%C3%A9-tsa%C3%AF,Brassicaceae,Brassica rapa subsp. Pekinensis,51351,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=51351,chou chinois
+chou de bruxelles,Légume,https://fr.wikipedia.org/wiki/Chou_de_Bruxelles,Brassicaceae,Brassica oleracea L. var. gemmifera DC.,,,chou de bruxelles
+chou kale,Légume,https://fr.wikipedia.org/wiki/Chou_kale,Brassicaceae,Brassica oleracea L. var. acephala DC.,,,chou kale
+chou romanesco,Légume,https://fr.wikipedia.org/wiki/Chou_romanesco,Brassicaceae,Brassica oleracea var. botrytis,3715,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3715,chou romanesco
+chou-fleur,Légume,https://fr.wikipedia.org/wiki/Chou-fleur,Brassicaceae,Brassica oleracea L. var. italica,2135253,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=2135253,chou-fleur
+chou-rave,Légume,https://fr.wikipedia.org/wiki/Chou-rave,Brassicaceae,Brassica oleracea L. var. gongylodes,,,chou-rave
+choux,Légume,https://fr.wikipedia.org/wiki/Amanda_Chou,Brassicaceae,None,32644,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=32644,choux
+choux autres,Légume,https://fr.wikipedia.org/wiki/Amanda_Chou,Brassicaceae,Brassica oleracea,3712,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3712,choux autres
+choux de milan,Légume,https://fr.wikipedia.org/wiki/Chou_de_Milan,Brassicaceae,Brassica oleracea var. sabauda L.,,,choux de milan
+chrysanthème,Arômate,https://fr.wikipedia.org/wiki/Chrysanth%C3%A8me,Asteraceae,Chrysanthemum,13422,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=13422,chrysanthème
+ciboulette,Arômate,https://fr.wikipedia.org/wiki/Ciboulette_commune,Alliaceae,Allium schoenoprasum L.,,,ciboulette
+citron,Fruit,https://fr.wikipedia.org/wiki/Citron,Rutaceae,Citrus medica L.,,,citron
+citron jambhiri,Légume,https://fr.wikipedia.org/wiki/Citron_jambhiri,Rutaceae,Citrus jambhiri Lush.,64884,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=64884,citron jambhiri
+citronelle,Arômate,https://fr.wikipedia.org/wiki/Citronelle,Poaceae,Cymbopogon citratus,66014,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=66014,citronelle
+citronnier,Fruit,https://fr.wikipedia.org/wiki/Citronnier,Rutaceae,Citrus limon L.,,,citronnier
+citrouille,Légume,https://fr.wikipedia.org/wiki/Citrouille,Cucurbitaceae,Cucurbita pepo L. var. pepo,,,citrouille
+"citrouille, potiron et courges",Légume,https://fr.wikipedia.org/wiki/Citrouille,Cucurbitaceae,Cucurbita maxima Duchesne,,,"citrouille, potiron et courges"
+concombre,Légume,https://fr.wikipedia.org/wiki/Concombre,Cucurbitaceae,Cucumis sativus L.,,,concombre
+consoude,Arômate,https://fr.wikipedia.org/wiki/Consoude,Boraginaceae,Symphytum officinale,278672,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=278672,consoude
+coreopsis,Arômate,https://fr.wikipedia.org/wiki/Coreopsis,Asteraceae,Coreopsis,13448,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=13448,coreopsis
+coriandre,Arômate,https://fr.wikipedia.org/wiki/Coriandre,Apiaceae,Coriandrum sativum L.,,,coriandre
+cornichon,Légume,https://fr.wikipedia.org/wiki/Cornichon,Cucurbitaceae,Cucumis anguria,39473,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=39473,cornichon
+courge butternut,Légume,https://fr.wikipedia.org/wiki/Doubeurre,Cucurbitaceae,Cucurbita moschata,3662,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3662,courge butternut
+"courge, citrouille, potiron",Légume,https://fr.wikipedia.org/wiki/Citrouille,Cucurbitaceae,None,32644,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=32644,"courge, citrouille, potiron"
+courges,Légume,https://fr.wikipedia.org/wiki/Courge,Cucurbitaceae,Cucurbita maxima Duchesne,,,courges
+courgette,Légume,https://fr.wikipedia.org/wiki/Courgette,Cucurbitaceae,Cucurbita pepo var. cylindrica,,,courgette
+cresson,Légume,https://fr.wikipedia.org/wiki/%C3%89dith_Cresson,Brassicaceae,Nasturtium officinale,65948,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=65948,cresson
+crosne,Légume,https://fr.wikipedia.org/wiki/Crosne_(Essonne),Lamiaceae,Stachys affinis,168825,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=168825,crosne
+crotalaire,Arômate,https://fr.wikipedia.org/wiki/Crotalaria,Fabaceae,Crotalaria juncea L.,,,crotalaire
+cucurbitaceae,Légume,https://fr.wikipedia.org/wiki/Cucurbitaceae,Cucurbitaceae,None,32644,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=32644,cucurbitaceae
+cumin,Arômate,https://fr.wikipedia.org/wiki/Cumin,Apiaceae,Cuminum cyminum,52462,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=52462,cumin
+curcuma,Arômate,https://fr.wikipedia.org/wiki/Curcuma,Zingiberaceae,Curcuma longa L.,,,curcuma
+cébette,Légume,https://fr.wikipedia.org/wiki/C%C3%A9bette,Alliaceae,Allium fistulosum L.,,,cébette
+céleri branche,Légume,https://fr.wikipedia.org/wiki/C%C3%A9leri,Apiaceae,Apium graveolens L.,,,céleri branche
+céleri-rave,Légume,https://fr.wikipedia.org/wiki/C%C3%A9leri-rave,Apiaceae,Apium graveolens L. var. rapaceum (Mill.) Gaudin,,,céleri-rave
+céleris,Légume,https://fr.wikipedia.org/wiki/C%C3%A9leri,Apiaceae,Apium graveolens L.,,,céleris
+dahlia,Arômate,https://fr.wikipedia.org/wiki/Dahlia,Asteraceae,Dahlia pinnata,101596,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=101596,dahlia
+dauphinelle,Arômate,https://fr.wikipedia.org/wiki/Delphinium,Ranunculaceae,Delphinium L.,,,dauphinelle
+digitale,Arômate,https://fr.wikipedia.org/wiki/Digitale,Scrophulariaceae,Digitalis purpurea L.,,,digitale
+dolique,Légume,https://fr.wikipedia.org/wiki/Dolique_asperge,Fabaceae,Vigna unguiculata subsp. Cylindrica,3091605,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3091605,dolique
+echalote,Légume,https://fr.wikipedia.org/wiki/%C3%89chalote,Alliaceae,Allium cepa var. aggregatum,28911,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=28911,echalote
+endive,Légume,https://fr.wikipedia.org/wiki/Endive,Asteraceae,Cichorium endivia,114280,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=114280,endive
+epeautre,Céréale,https://fr.wikipedia.org/wiki/%C3%89peautre,Poaceae,Triticum spelta L.,,,epeautre
+epinard,Légume,https://fr.wikipedia.org/wiki/%C3%89pinard,Amaranthaceae,Spinacia oleracea L.,3562,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3562,epinard
+estragon,Arômate,https://fr.wikipedia.org/wiki/Estragon,Asteraceae,Artemisia dracunculus,72341,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=72341,estragon
+eucalyptus,Légume,https://fr.wikipedia.org/wiki/Eucalyptus,Myrtaceae,Eucalyptus torelliana F.V. Mueller,,,eucalyptus
+euphorbe,Arômate,https://fr.wikipedia.org/wiki/Euphorbe,Euphorbiaceae,Euphorbia antiquorum L.,,,euphorbe
+fenouil,Légume,https://fr.wikipedia.org/wiki/Fenouil_commun,Apiaceae,Foeniculum vulgare Mill.,,,fenouil
+fenugrec,Légume,https://fr.wikipedia.org/wiki/Fenugrec,Fabaceae,Trigonella foenum-graecum L.,,,fenugrec
+feve,Légume,https://fr.wikipedia.org/wiki/F%C3%A8ve,Fabaceae,Vicia faba L.,,,feve
+figue,Fruit,https://fr.wikipedia.org/wiki/Figue,Moraceae,Ficus carica,3494,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3494,figue
+fraise,Fruit,https://fr.wikipedia.org/wiki/Fraise,Rosaceae,Fragaria × ananassa (Weston),,,fraise
+framboise,Fruit,https://fr.wikipedia.org/wiki/Framboise,Rosaceae,Rubus idaeus,32247,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=32247,framboise
+frisée,Légume,https://fr.wikipedia.org/wiki/Chicor%C3%A9e_fris%C3%A9e,Asteraceae,Cichorium endivia L.,,,frisée
+fève fèverole,Légume,https://fr.wikipedia.org/wiki/F%C3%A9verolle,Fabaceae,Vicia faba L.,,,fève fèverole
+féverole,Légume,https://fr.wikipedia.org/wiki/F%C3%A9verolle,Fabaceae,Vicia faba L.,,,féverole
+gesse,Légume,https://fr.wikipedia.org/wiki/Geese,Fabaceae,Lathyrus sativus L.,,,gesse
+glaïeul,Arômate,https://fr.wikipedia.org/wiki/Gla%C3%AFeul,Iridaceae,Gladiolus communis L.,,,glaïeul
+glycine tubéreuse,Légume,https://fr.wikipedia.org/wiki/Apios_americana,Fabaceae,Apios americana Medik.,,,glycine tubéreuse
+gombo,Légume,https://fr.wikipedia.org/wiki/Gombo,Malvaceae,Abelmoschus esculentus,455045,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=455045,gombo
+groseille,Fruit,https://fr.wikipedia.org/wiki/Groseille,Grossulariaceae,Ribes uva-crispa,135518,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=135518,groseille
+haricot,Légume,https://fr.wikipedia.org/wiki/Haricot,Fabaceae,Phaseolus vulgaris,3885,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3885,haricot
+haricot de guar,Légume,https://fr.wikipedia.org/wiki/Gomme_de_guar,Fabaceae,Cyamopsis tetragonoloba L. Taubert,,,haricot de guar
+haricot vert,Légume,https://fr.wikipedia.org/wiki/Haricot_vert,Fabaceae,Phaseolus vulgaris,3885,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3885,haricot vert
+haricot à ecosser et demi-secs,Légume,https://fr.wikipedia.org/wiki/Mogette,Fabaceae,Phaseolus vulgaris,3885,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3885,haricot à ecosser et demi-secs
+haricots,Légume,https://fr.wikipedia.org/wiki/Haricot,Fabaceae,Phaseolus vulgaris,3885,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3885,haricots
+herbe,Arômate,https://fr.wikipedia.org/wiki/Herbe,Poaceae,Poa L.,,,herbe
+hosta,Arômate,https://fr.wikipedia.org/wiki/Hosta_(genre),Asparagaceae,Hosta L.,,,hosta
+hysope,Arômate,https://fr.wikipedia.org/wiki/Hysope,Lamiaceae,Hyssopus officinalis,39324,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=39324,hysope
+hévéa,Arbres,https://fr.wikipedia.org/wiki/H%C3%A9v%C3%A9a,Euphorbiaceae,Hevea brasiliensis,3981,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3981,hévéa
+ignam,Légume,https://fr.wikipedia.org/wiki/Igname,Dioscoreaceae,Dioscorea alata L.,,,ignam
+jujube,Fruit,https://fr.wikipedia.org/wiki/Jujube_(fruit),Rhamnaceae,Ziziphus zizyphus L. Karst.,,,jujube
+kiwi,Fruit,https://fr.wikipedia.org/wiki/Kiwi,Actinidiaceae,Actinidia deliciosa,3627,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3627,kiwi
+lablab,Légume,https://fr.wikipedia.org/wiki/Lablab_purpureus,Fabaceae,Lablab purpureus L.,,,lablab
+laitue,Légume,https://fr.wikipedia.org/wiki/Laitue,Asteraceae,Lactuca sativa L.,,,laitue
+laurier sauce,Arômate,https://fr.wikipedia.org/wiki/Laurus_nobilis,Lauraceae,Laurus nobilis L.,,,laurier sauce
+lavande,Arômate,https://fr.wikipedia.org/wiki/Lavande,Lamiaceae,Lavandula L.,,,lavande
+lentille,Légume,https://fr.wikipedia.org/wiki/Lentille_cultiv%C3%A9e,Fabaceae,Lens culinaris,3864,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3864,lentille
+lilas,Arômate,https://fr.wikipedia.org/wiki/Les_Lilas,Oleaceae,Syringa vulgaris,34270,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=34270,lilas
+lin,Céréale,https://fr.wikipedia.org/wiki/Lin_cultiv%C3%A9,Linaceae,Linum usitatissimum,4006,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4006,lin
+livèche,Arômate,https://fr.wikipedia.org/wiki/Liv%C3%A8che,Apiaceae,Levisticum officinale,48042,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=48042,livèche
+lupin,Arômate,https://fr.wikipedia.org/wiki/Lupin,Fabaceae,Lupinus L.,,,lupin
+luzerne,Arômate,https://fr.wikipedia.org/wiki/Luzerne_cultiv%C3%A9e,Fabaceae,Medicago sativa L.,,,luzerne
+macadamia,Légume,https://fr.wikipedia.org/wiki/Noix_de_macadamia,Proteaceae,Macadamia integrifolia Maiden & Betche,,,macadamia
+maceron,Arômate,https://fr.wikipedia.org/wiki/Maceron,Apiaceae,Smyrnium olusatrum,40962,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=40962,maceron
+malanga,Légume,https://fr.wikipedia.org/wiki/Christian_Malanga,Araceae,Xanthosoma sagittifolium L. Schott,,,malanga
+manioc,Légume,https://fr.wikipedia.org/wiki/Manioc,Euphorbiaceae,Manihot esculenta Crantz,,,manioc
+maïs,Légume,https://fr.wikipedia.org/wiki/Ma%C3%AFs,Poaceae,Zea mays L.,,,maïs
+maïs doux,Légume,https://fr.wikipedia.org/wiki/Ma%C3%AFs_doux,Poaceae,Zea mays L.,,,maïs doux
+melon,Légume,https://fr.wikipedia.org/wiki/Melon_(plante),Cucurbitaceae,Cucumis melo L.,,,melon
+menthe,Arômate,https://fr.wikipedia.org/wiki/Menthe,Lamiaceae,Mentha spicata L.,,,menthe
+mesclun,Légume,https://fr.wikipedia.org/wiki/Mesclun,Miscellaneous,Miscellaneous,,,mesclun
+mil,Céréale,https://fr.wikipedia.org/wiki/Millet_(gramin%C3%A9e),Poaceae,Pennisetum americanum L. Leeke,4543,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4543,mil
+millet,Céréale,https://fr.wikipedia.org/wiki/Millet_(gramin%C3%A9e),Poaceae,Pennisetum glaucum,4543,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4543,millet
+millet des oiseaux,Légume,https://fr.wikipedia.org/wiki/Setaria_italica,Poaceae,Setaria italica L. P. Beauv.,,,millet des oiseaux
+moutarde,Légume,https://fr.wikipedia.org/wiki/Moutarde_(condiment),Brassicaceae,Brassica juncea L.,,,moutarde
+myrtilles,Fruit,https://fr.wikipedia.org/wiki/Myrtille,Ericaceae,Vaccinium myrtillus,180763,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=180763,myrtilles
+mâche,Légume,https://fr.wikipedia.org/wiki/Valerianella_locusta,Caprifoliaceae,Valerianella locusta,59166,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=59166,mâche
+mélisse,Arômate,https://fr.wikipedia.org/wiki/M%C3%A9lisse_officinale,Lamiaceae,Melissa officinalis L.,,,mélisse
 mûre,Fruit,,Moraceae,Morus alba L.,,,mûre
-navet,Légume,,Brassicaceae,Brassica rapa var. Rapa L.,,,navet
-navet botte,Légume,,Brassicaceae,Brassica rapa var. Rapa,,,navet botte
-navet conservation,Légume,,Brassicaceae,Brassica rapa var. Rapa,,,navet conservation
-nectarine,Fruit,,Rosaceae,Prunus persica nucipersica,,,nectarine
-nectarine et brugnon,Fruit,,Rosaceae,Prunus persica nucipersica,,,nectarine et brugnon
-niébé,Légume,,Fabaceae,Vigna unguiculata L. Walp.,,,niébé
-noix,Fruit,,Juglandaceae,Juglans regia L.,,,noix
-noyer,Fruit,,Juglandaceae,Juglans regia L.,,,noyer
-oignon,Légume,,Alliaceae,Allium cepa L.,,,oignon
-oignon blanc,Légume,,Alliaceae,Allium cepa L.,,,oignon blanc
-oignon botte,Légume,,Alliaceae,Allium cepa L.,,,oignon botte
-oignon conservation,Légume,,Alliaceae,Allium cepa L.,,,oignon conservation
-oignon de couleur,Légume,,Alliaceae,Allium cepa L.,,,oignon de couleur
-olive,Fruit,,Oleaceae,Olea europaea,,,olive
-orge,Céréale,,Poaceae,Hordeum vulgare L.,,,orge
-origan,Arômate,,Lamiaceae,Origanum vulgare,,,origan
-orme,Arbres,,Ulmaceae,Ulmus L.,,,orme
-ortie,Arômate,,Urticaceae,Urtica dioica L.,,,ortie
-oseille,Arômate,,Polygonaceae,Rumex acetosa L.,,,oseille
-panais,Légume,,Apiaceae,Pastinaca sativa,,,panais
-pastel des teinturiers,Légume,,Brassicaceae,Isatis tinctoria L.,,,pastel des teinturiers
-pastèque,Légume,,Cucurbitaceae,Citrullus lanatus var. lanatus,,,pastèque
-patate douce,Légume,,Convolvulaceae,Ipomoea batatas L. Lam.,,,patate douce
-persil,Arômate,,Apiaceae,Petroselinum crispum L.,,,persil
-peuplier,Légume,,Salicaceae,Populus L.,,,peuplier
-phacélie,Arômate,,Hydrophyllaceae,Phacelia (genus),,,phacélie
-piment,Légume,,Solanaceae,Capsicum annuum L.,,,piment
-pissenlit,Arômate,,Asteraceae,Taraxacum officinale L.,,,pissenlit
-poire,Fruit,,Rosaceae,Pyrus communis L.,,,poire
-poireau,Légume,,Alliaceae,Allium porrum L.,,,poireau
-poires d'automne,Fruit,,Rosaceae,Pyrus communis,,,poires d'automne
-poires d'ete autres,Fruit,,Rosaceae,Pyrus communis,,,poires d'ete autres
-poires d'hiver,Fruit,,Rosaceae,Pyrus communis,,,poires d'hiver
-poires jules guyot,Fruit,,Rosaceae,Pyrus communis,,,poires jules guyot
-poires william's,Fruit,,Rosaceae,Pyrus communis,,,poires william's
-pois,Légume,,Fabaceae,Pisum sativum L.,,,pois
-pois chiche,Légume,,Fabaceae,Cicer arietinum L.,,,pois chiche
-pois d'angole,Légume,,Fabaceae,Cajanus cajan L. Millsp.,,,pois d'angole
-pois gourmand,Légume,,Fabaceae,Pisum sativum var. saccharatum,,,pois gourmand
-poivron,Légume,,Solanaceae,Capsicum annuum L.,,,poivron
-pomme,Fruit,,Rosaceae,Malus pumila Mill.,,,pomme
-pomme de table autres,Fruit,,Rosaceae,Malus pumila Mill.,,,pomme de table autres
-pomme de terre,Légume,,Solanaceae,Solanum tuberosum,,,pomme de terre
-pomme de terre conservation,Légume,,Solanaceae,Solanum tuberosum,,,pomme de terre conservation
-pomme de terre primeur,Légume,,Solanaceae,Solanum tuberosum,,,pomme de terre primeur
-pomme golden,Fruit,,Rosaceae,Malus pumila,,,pomme golden
-pomme granny smith,Fruit,,Rosaceae,Malus pumila,,,pomme granny smith
-prune,Fruit,,Rosaceae,Prunus domestica,,,prune
-prunes autres,Fruit,,Rosaceae,Prunus domestica,,,prunes autres
-pâtisson,Légume,,Cucurbitaceae,Cucurbita pepo L. var. ovifera L. Harz,,,pâtisson
-pétunia,Arômate,,Solanaceae,Petunia (genus),,,pétunia
-pêche,Fruit,,Rosaceae,Prunus persica (L.) Batsch,,,pêche
-radis,Légume,,Brassicaceae,Raphanus sativus L.,,,radis
-radis botte,Légume,,Brassicaceae,Raphanus sativus L.,,,radis botte
-radis conservation,Légume,,Brassicaceae,Raphanus sativus L.,,,radis conservation
-radis noir,Légume,,Brassicaceae,Raphanus sativus var. niger,,,radis noir
-raifort,Arômate,,Brassicaceae,Armoracia rusticana,,,raifort
-raisin,Fruit,,Vitaceae,Vitis vinifera,,,raisin
-raisin de table,Fruit,,Vitaceae,Vitis vinifera,,,raisin de table
-reine-claude,Fruit,,Rosaceae,Prunus domestica subsp. italica var. claudiana,,,reine-claude
-rhubarbe,Légume,,Polygonaceae,Polygonaceae,,,rhubarbe
-romarin,Arômate,,Lamiaceae,Rosmarinus officinalis,,,romarin
-roquette,Légume,,Brassicaceae,Eruca sativa Mill.,,,roquette
-rosier,Arômate,,Rosaceae,Rosa (genus),,,rosier
-rue,Arômate,,Rutaceae,Ruta graveolens L.,,,rue
-rutabaga,Légume,,Brassicaceae,Brassica napus subsp. rapifera,,,rutabaga
-réglisse,Arômate,,Fabaceae,Glycyrrhiza glabra L.,,,réglisse
-safran,Arômate,,Iridaceae,Crocus sativus L.,,,safran
-salade chicoree frisee,Légume,,Asteraceae,Cichorium endivia var. crispum,,,salade chicoree frisee
-salade chicoree scarole,Légume,,Asteraceae,Cichorium endivia var. latifolia,,,salade chicoree scarole
-salade cresson,Légume,,Brassicaceae,Nasturtium officinale,,,salade cresson
-salades autres pf,Légume,,Asteraceae,Lactuca sativa,,,salades autres pf
-salsifis,Légume,,Asteraceae,Tragopogon porrifolius,,,salsifis
-sapotillier,Fruit,,Sapotaceae,Manilkara zapota L. P. Royen,,,sapotillier
-sarriette,Arômate,,Lamiaceae,Satureja,,,sarriette
-sauge,Arômate,,Lamiaceae,Salvia officinalis L.,,,sauge
-scarole,Légume,,Asteraceae,Cichorium endivia var. latifolia,,,scarole
-scorsonère,Arômate,,Asteraceae,Scorzonera hispanica L.,,,scorsonère
-seigle,Céréale,,Poaceae,Secale cereale L.,,,seigle
-soja,Céréale,,Fabaceae,Glycine max L.,,,soja
-sorgho,Céréale,,Poaceae,Sorghum bicolor L. Moench,,,sorgho
-soucis,Arômate,,Asteraceae,Calendula officinalis L.,,,soucis
-tagète,Arômate,,Asteraceae,Tagetes patula L.,,,tagète
-tanaisie,Arômate,,Asteraceae,Tanacetum vulgare L.,,,tanaisie
-thym,Arômate,,Lamiaceae,Thymus vulgaris,,,thym
-tomate,Légume,,Solanaceae,Solanum lycopersicum L.,,,tomate
-tomate ancienne,Légume,,Solanaceae,Solanum lycopersicum L.,,,tomate ancienne
-tomate cerise,Légume,,Solanaceae,Solanum lycopersicum L.,,,tomate cerise
-tomate classique,Légume,,Solanaceae,Solanum lycopersicum L.,,,tomate classique
-topinambour,Légume,,Asteraceae,Helianthus tuberosus L.,,,topinambour
-tournesol,Céréale,,Asteraceae,Helianthus annuus L.,,,tournesol
-trèfle,Arômate,,Fabaceae,Trifolium (genus),,,trèfle
-trèfle blanc,Légume,,Fabaceae,Trifolium repens L.,,,trèfle blanc
-trèfle rouge,Arômate,,Fabaceae,Trifolium pratense L.,,,trèfle rouge
-tétragone,Arômate,,Aizoaceae,Tetragonia (genus),,,tétragone
-valériane,Arômate,,Valerianaceae,Centranthus ruber L.,,,valériane
-vesce,Arômate,,Fabaceae,Vicia L.,,,vesce
-vigne,Fruit,,Vitaceae,Vitis vinifera,,,vigne
-zinnia,Arômate,,Asteraceae,Zinnia (genus),,,zinnia
-œillet d'inde,Arômate,,Asteraceae,Tagetes patula L.,,,œillet d'inde
-œillet du japon,Arômate,,Asteraceae,Tagetes patula,,,œillet du japon
+navet,Légume,https://fr.wikipedia.org/wiki/Navet,Brassicaceae,Brassica rapa var. Rapa L.,,,navet
+navet botte,Légume,https://fr.wikipedia.org/wiki/Machine_%C3%A0_coudre,Brassicaceae,Brassica rapa var. Rapa,1652998,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1652998,navet botte
+navet conservation,Légume,https://fr.wikipedia.org/wiki/Rutabaga,Brassicaceae,Brassica rapa var. Rapa,1652998,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1652998,navet conservation
+nectarine,Fruit,https://fr.wikipedia.org/wiki/Nectarine,Rosaceae,Prunus persica nucipersica,,,nectarine
+nectarine et brugnon,Fruit,https://fr.wikipedia.org/wiki/Nectarine,Rosaceae,Prunus persica nucipersica,,,nectarine et brugnon
+niébé,Légume,https://fr.wikipedia.org/wiki/Vigna_unguiculata,Fabaceae,Vigna unguiculata L. Walp.,,,niébé
+noix,Fruit,https://fr.wikipedia.org/wiki/Noix,Juglandaceae,Juglans regia L.,,,noix
+noyer,Fruit,https://fr.wikipedia.org/wiki/Noyer,Juglandaceae,Juglans regia L.,,,noyer
+oignon,Légume,https://fr.wikipedia.org/wiki/Oignon,Alliaceae,Allium cepa L.,,,oignon
+oignon blanc,Légume,https://fr.wikipedia.org/wiki/Oignon,Alliaceae,Allium cepa L.,,,oignon blanc
+oignon botte,Légume,https://fr.wikipedia.org/wiki/Ciboule,Alliaceae,Allium cepa L.,,,oignon botte
+oignon conservation,Légume,https://fr.wikipedia.org/wiki/Oignon,Alliaceae,Allium cepa L.,,,oignon conservation
+oignon de couleur,Légume,https://fr.wikipedia.org/wiki/Oignon,Alliaceae,Allium cepa L.,,,oignon de couleur
+olive,Fruit,https://fr.wikipedia.org/wiki/Olive,Oleaceae,Olea europaea,4146,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4146,olive
+orge,Céréale,https://fr.wikipedia.org/wiki/Orge_commune,Poaceae,Hordeum vulgare L.,,,orge
+origan,Arômate,https://fr.wikipedia.org/wiki/Origan,Lamiaceae,Origanum vulgare,39352,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=39352,origan
+orme,Arbres,https://fr.wikipedia.org/wiki/Orme,Ulmaceae,Ulmus L.,,,orme
+ortie,Arômate,https://fr.wikipedia.org/wiki/Ortie,Urticaceae,Urtica dioica L.,,,ortie
+oseille,Arômate,https://fr.wikipedia.org/wiki/Oseille_commune,Polygonaceae,Rumex acetosa L.,,,oseille
+panais,Légume,https://fr.wikipedia.org/wiki/Panais,Apiaceae,Pastinaca sativa,4041,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4041,panais
+pastel des teinturiers,Légume,https://fr.wikipedia.org/wiki/Pastel_des_teinturiers,Brassicaceae,Isatis tinctoria L.,,,pastel des teinturiers
+pastèque,Légume,https://fr.wikipedia.org/wiki/Past%C3%A8que,Cucurbitaceae,Citrullus lanatus var. lanatus,3654,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3654,pastèque
+patate douce,Légume,https://fr.wikipedia.org/wiki/Patate_douce,Convolvulaceae,Ipomoea batatas L. Lam.,,,patate douce
+persil,Arômate,https://fr.wikipedia.org/wiki/Persil,Apiaceae,Petroselinum crispum L.,,,persil
+peuplier,Légume,https://fr.wikipedia.org/wiki/Peuplier,Salicaceae,Populus L.,,,peuplier
+phacélie,Arômate,https://fr.wikipedia.org/wiki/Phac%C3%A9lie_%C3%A0_feuilles_de_tanaisie,Hydrophyllaceae,Phacelia (genus),,,phacélie
+piment,Légume,https://fr.wikipedia.org/wiki/Piment,Solanaceae,Capsicum annuum L.,,,piment
+pissenlit,Arômate,https://fr.wikipedia.org/wiki/Pissenlit,Asteraceae,Taraxacum officinale L.,,,pissenlit
+poire,Fruit,https://fr.wikipedia.org/wiki/Poire,Rosaceae,Pyrus communis L.,,,poire
+poireau,Légume,https://fr.wikipedia.org/wiki/Poireau,Alliaceae,Allium porrum L.,,,poireau
+poires d'automne,Fruit,https://fr.wikipedia.org/wiki/Poire,Rosaceae,Pyrus communis,23211,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=23211,poires d'automne
+poires d'ete autres,Fruit,https://fr.wikipedia.org/wiki/Poire_(caricature),Rosaceae,Pyrus communis,23211,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=23211,poires d'ete autres
+poires d'hiver,Fruit,https://fr.wikipedia.org/wiki/Poire,Rosaceae,Pyrus communis,23211,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=23211,poires d'hiver
+poires jules guyot,Fruit,https://fr.wikipedia.org/wiki/Jules_Guyot,Rosaceae,Pyrus communis,23211,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=23211,poires jules guyot
+poires william's,Fruit,https://fr.wikipedia.org/wiki/Distillerie_Mavela,Rosaceae,Pyrus communis,23211,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=23211,poires william's
+pois,Légume,https://fr.wikipedia.org/wiki/Pois_cultiv%C3%A9,Fabaceae,Pisum sativum L.,,,pois
+pois chiche,Légume,https://fr.wikipedia.org/wiki/Pois_chiche,Fabaceae,Cicer arietinum L.,,,pois chiche
+pois d'angole,Légume,https://fr.wikipedia.org/wiki/Pois_d%27Angole,Fabaceae,Cajanus cajan L. Millsp.,,,pois d'angole
+pois gourmand,Légume,https://fr.wikipedia.org/wiki/Pois_mangetout,Fabaceae,Pisum sativum var. saccharatum,208194,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=208194,pois gourmand
+poivron,Légume,https://fr.wikipedia.org/wiki/Poivron,Solanaceae,Capsicum annuum L.,,,poivron
+pomme,Fruit,https://fr.wikipedia.org/wiki/Pomme,Rosaceae,Malus pumila Mill.,,,pomme
+pomme de table autres,Fruit,https://fr.wikipedia.org/wiki/Pomme_de_table,Rosaceae,Malus pumila Mill.,,,pomme de table autres
+pomme de terre,Légume,https://fr.wikipedia.org/wiki/Pomme_de_terre,Solanaceae,Solanum tuberosum,4113,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4113,pomme de terre
+pomme de terre conservation,Légume,https://fr.wikipedia.org/wiki/Pomme_de_terre,Solanaceae,Solanum tuberosum,4113,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4113,pomme de terre conservation
+pomme de terre primeur,Légume,https://fr.wikipedia.org/wiki/Pomme_de_terre_de_primeur,Solanaceae,Solanum tuberosum,4113,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4113,pomme de terre primeur
+pomme golden,Fruit,https://fr.wikipedia.org/wiki/Golden_Delicious,Rosaceae,Malus pumila,283210,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=283210,pomme golden
+pomme granny smith,Fruit,https://fr.wikipedia.org/wiki/Granny_Smith,Rosaceae,Malus pumila,283210,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=283210,pomme granny smith
+prune,Fruit,https://fr.wikipedia.org/wiki/Prune,Rosaceae,Prunus domestica,3758,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3758,prune
+prunes autres,Fruit,https://fr.wikipedia.org/wiki/Marjane_Satrapi,Rosaceae,Prunus domestica,3758,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3758,prunes autres
+pâtisson,Légume,https://fr.wikipedia.org/wiki/P%C3%A2tisson,Cucurbitaceae,Cucurbita pepo L. var. ovifera L. Harz,,,pâtisson
+pétunia,Arômate,https://fr.wikipedia.org/wiki/P%C3%A9tunia,Solanaceae,Petunia (genus),,,pétunia
+pêche,Fruit,https://fr.wikipedia.org/wiki/Histoire_de_la_p%C3%AAche,Rosaceae,Prunus persica (L.) Batsch,,,pêche
+radis,Légume,https://fr.wikipedia.org/wiki/Radis,Brassicaceae,Raphanus sativus L.,,,radis
+radis botte,Légume,https://fr.wikipedia.org/wiki/Botte_(agriculture),Brassicaceae,Raphanus sativus L.,,,radis botte
+radis conservation,Légume,https://fr.wikipedia.org/wiki/Radis_blanc,Brassicaceae,Raphanus sativus L.,,,radis conservation
+radis noir,Légume,https://fr.wikipedia.org/wiki/Radis_noir,Brassicaceae,Raphanus sativus var. niger,41679,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=41679,radis noir
+raifort,Arômate,https://fr.wikipedia.org/wiki/Raifort,Brassicaceae,Armoracia rusticana,3704,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3704,raifort
+raisin,Fruit,https://fr.wikipedia.org/wiki/Raisin,Vitaceae,Vitis vinifera,29760,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=29760,raisin
+raisin de table,Fruit,https://fr.wikipedia.org/wiki/Raisin_de_table,Vitaceae,Vitis vinifera,29760,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=29760,raisin de table
+reine-claude,Fruit,https://fr.wikipedia.org/wiki/Reine-claude,Rosaceae,Prunus domestica subsp. italica var. claudiana,,,reine-claude
+rhubarbe,Légume,https://fr.wikipedia.org/wiki/Rhubarbe,Polygonaceae,Polygonaceae,3615,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3615,rhubarbe
+romarin,Arômate,https://fr.wikipedia.org/wiki/Romarin,Lamiaceae,Rosmarinus officinalis,39367,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=39367,romarin
+roquette,Légume,https://fr.wikipedia.org/wiki/Roquette_(arme),Brassicaceae,Eruca sativa Mill.,,,roquette
+rosier,Arômate,https://fr.wikipedia.org/wiki/Rosier,Rosaceae,Rosa (genus),,,rosier
+rue,Arômate,https://fr.wikipedia.org/wiki/Rue,Rutaceae,Ruta graveolens L.,,,rue
+rutabaga,Légume,https://fr.wikipedia.org/wiki/Rutabaga,Brassicaceae,Brassica napus subsp. rapifera,3709,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3709,rutabaga
+réglisse,Arômate,https://fr.wikipedia.org/wiki/R%C3%A9glisse,Fabaceae,Glycyrrhiza glabra L.,,,réglisse
+safran,Arômate,https://fr.wikipedia.org/wiki/Safran_(entreprise),Iridaceae,Crocus sativus L.,,,safran
+salade chicoree frisee,Légume,https://fr.wikipedia.org/wiki/Chicor%C3%A9e_fris%C3%A9e,Asteraceae,Cichorium endivia var. crispum,,,salade chicoree frisee
+salade chicoree scarole,Légume,https://fr.wikipedia.org/wiki/Chicor%C3%A9e_scarole,Asteraceae,Cichorium endivia var. latifolia,,,salade chicoree scarole
+salade cresson,Légume,https://fr.wikipedia.org/wiki/Cresson_al%C3%A9nois,Brassicaceae,Nasturtium officinale,65948,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=65948,salade cresson
+salades autres pf,Légume,https://fr.wikipedia.org/wiki/Polyn%C3%A9sie_fran%C3%A7aise,Asteraceae,Lactuca sativa,4236,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4236,salades autres pf
+salsifis,Légume,https://fr.wikipedia.org/wiki/Tragopogon,Asteraceae,Tragopogon porrifolius,13731,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=13731,salsifis
+sapotillier,Fruit,https://fr.wikipedia.org/wiki/Sapotillier,Sapotaceae,Manilkara zapota L. P. Royen,,,sapotillier
+sarriette,Arômate,https://fr.wikipedia.org/wiki/Sarriette,Lamiaceae,Satureja,49986,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=49986,sarriette
+sauge,Arômate,https://fr.wikipedia.org/wiki/Sauge,Lamiaceae,Salvia officinalis L.,,,sauge
+scarole,Légume,https://fr.wikipedia.org/wiki/Chicor%C3%A9e_scarole,Asteraceae,Cichorium endivia var. latifolia,,,scarole
+scorsonère,Arômate,https://fr.wikipedia.org/wiki/Scorson%C3%A8re,Asteraceae,Scorzonera hispanica L.,,,scorsonère
+seigle,Céréale,https://fr.wikipedia.org/wiki/Seigle,Poaceae,Secale cereale L.,,,seigle
+soja,Céréale,https://fr.wikipedia.org/wiki/Soja,Fabaceae,Glycine max L.,,,soja
+sorgho,Céréale,https://fr.wikipedia.org/wiki/Sorgo_commun,Poaceae,Sorghum bicolor L. Moench,,,sorgho
+soucis,Arômate,https://fr.wikipedia.org/wiki/Nom_vernaculaire,Asteraceae,Calendula officinalis L.,,,soucis
+tagète,Arômate,https://fr.wikipedia.org/wiki/Tagetes,Asteraceae,Tagetes patula L.,,,tagète
+tanaisie,Arômate,https://fr.wikipedia.org/wiki/Tanaisie_commune,Asteraceae,Tanacetum vulgare L.,,,tanaisie
+thym,Arômate,https://fr.wikipedia.org/wiki/Thymus_(genre_v%C3%A9g%C3%A9tal),Lamiaceae,Thymus vulgaris,49992,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=49992,thym
+tomate,Légume,https://fr.wikipedia.org/wiki/Tomate,Solanaceae,Solanum lycopersicum L.,,,tomate
+tomate ancienne,Légume,https://fr.wikipedia.org/wiki/Tomate,Solanaceae,Solanum lycopersicum L.,,,tomate ancienne
+tomate cerise,Légume,https://fr.wikipedia.org/wiki/Tomate_cerise,Solanaceae,Solanum lycopersicum L.,,,tomate cerise
+tomate classique,Légume,https://fr.wikipedia.org/wiki/Tomate_cerise,Solanaceae,Solanum lycopersicum L.,,,tomate classique
+topinambour,Légume,https://fr.wikipedia.org/wiki/Topinambour,Asteraceae,Helianthus tuberosus L.,,,topinambour
+tournesol,Céréale,https://fr.wikipedia.org/wiki/Tournesol,Asteraceae,Helianthus annuus L.,,,tournesol
+trèfle,Arômate,https://fr.wikipedia.org/wiki/Tr%C3%A8fle,Fabaceae,Trifolium (genus),,,trèfle
+trèfle blanc,Légume,https://fr.wikipedia.org/wiki/Tr%C3%A8fle_blanc,Fabaceae,Trifolium repens L.,,,trèfle blanc
+trèfle rouge,Arômate,https://fr.wikipedia.org/wiki/Tr%C3%A8fle,Fabaceae,Trifolium pratense L.,,,trèfle rouge
+tétragone,Arômate,https://fr.wikipedia.org/wiki/Tetragonia_tetragonioides,Aizoaceae,Tetragonia (genus),,,tétragone
+valériane,Arômate,https://fr.wikipedia.org/wiki/Val%C3%A9riane_officinale,Valerianaceae,Centranthus ruber L.,,,valériane
+vesce,Arômate,https://fr.wikipedia.org/wiki/Vicia,Fabaceae,Vicia L.,,,vesce
+vigne,Fruit,https://fr.wikipedia.org/wiki/Vigne,Vitaceae,Vitis vinifera,29760,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=29760,vigne
+zinnia,Arômate,https://fr.wikipedia.org/wiki/Zinnia,Asteraceae,Zinnia (genus),,,zinnia
+œillet d'inde,Arômate,https://fr.wikipedia.org/wiki/%C5%92illet_d%27Inde,Asteraceae,Tagetes patula L.,,,œillet d'inde
+œillet du japon,Arômate,https://fr.wikipedia.org/wiki/%C5%92illet_commun,Asteraceae,Tagetes patula,55843,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=55843,œillet du japon

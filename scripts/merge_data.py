@@ -19,11 +19,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from scripts.constants import (
-    ENDC, FAIL, OKBLUE, OKGREEN,
-    categories, clean_string, description_interactions,
-    interaction_forward, interactions, most_complete, reverse_interactions,
-)
+from scripts.constants import *
+from scripts.function_search_taxonomy import enrich_species_db
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 
@@ -109,6 +106,10 @@ def add_or_update_interaction(source, target, interaction, references='', weight
         return
     if source == target:
         return
+
+    # Plant/animal interactions get a boosted weight
+    if species_db[source]['category'] in cat_animals or species_db[target]['category'] in cat_animals:
+        weight = max(weight, 9.0)
 
     key = (source, target)
     if key not in interactions_db:
@@ -328,9 +329,9 @@ def main():
     prune_db()
     print(f"After pruning: {len(species_db)} species, {len(interactions_db)} interactions")
 
-    # 6. Optional: enrich with NCBI/Wikipedia (uncomment if needed)
-    # from scripts.function_search_taxonomy import find_latin_name, find_tax_id
-    # ... enrichment logic ...
+    # 6. Enrich with NCBI/Wikipedia taxonomy data
+    print("\nEnriching species with Wikipedia/NCBI data...")
+    enrich_species_db(species_db, clean_string)
 
     # 7. Save
     save_species_csv(os.path.join(DATA_DIR, 'merged_especes.csv'))
