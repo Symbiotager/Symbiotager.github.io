@@ -11,7 +11,7 @@ python -m scripts.merge_data
 python -m scripts.generate
 
 git checkout -B website
-git add --force static/ index.html MonPotager.html merged.html
+git add --force static/ *.html
 git commit -m "Generate static site"
 git push origin website --force
 
